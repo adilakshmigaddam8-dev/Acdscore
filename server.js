@@ -112,6 +112,7 @@ app.use(hpp());           // HTTP parameter pollution prevention
 // ── CORS ─────────────────────────────────────────────────────────────────────
 const allowedOrigins = [
   process.env.CLIENT_URL,
+  'https://acdscore.vercel.app',  // Production frontend on Vercel
   'http://localhost:3000',
   'http://localhost:5000',
   'http://localhost:5500',
@@ -194,21 +195,22 @@ app.post('/api/contact', async (req, res) => {
   }
 
   try {
-const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 587,
-    secure: false,
-    auth: {
+    const transporter = nodemailer.createTransport({
+      host: 'smtp.gmail.com',
+      port: 587,
+      secure: false,
+      auth: {
         user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASSWORD
-    },
-    tls: {
-        rejectUnauthorized: false
-    }
-});
+        pass: process.env.EMAIL_PASSWORD,
+      },
+      tls: {
+        rejectUnauthorized: false,
+      },
+    });
+
     await transporter.sendMail({
-      from: process.env.EMAIL_USER,
-      to:   'myraofficial057@gmail.com',
+      from:    process.env.EMAIL_USER,
+      to:      process.env.CONTACT_EMAIL || 'myraofficial057@gmail.com',
       subject: `Contact Form - ${name}`,
       html: `
         <h3>New Contact Message</h3>
@@ -220,7 +222,7 @@ const transporter = nodemailer.createTransport({
 
     res.json({ success: true, message: 'Email sent successfully.' });
   } catch (error) {
-    console.error("EMAIL ERROR:", error);
+    console.error('EMAIL ERROR:', error);
     res.status(500).json({
       success: false,
       error: error.message,
@@ -312,4 +314,5 @@ process.on('uncaughtException', (err) => {
   logger.error(`Uncaught Exception: ${err.message}`);
   process.exit(1);
 });
+
 module.exports = app;
