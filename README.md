@@ -1,194 +1,304 @@
-# AcadScore Backend API
+# 🎓 AcadScore Backend API
 
-Production-ready Node.js + Express + MongoDB backend for the AcadScore platform.
+<div align="center">
+
+### Empowering Students with Smart Academic & Financial Intelligence
+
+A production-grade **Node.js, Express, and MongoDB** backend powering the **AcadScore Platform** — a modern ecosystem of academic calculators, financial tools, performance analytics, secure authentication, and reporting services designed for students, educators, and professionals.
+
+Built with scalability, security, and performance in mind.
+
+![Node.js](https://img.shields.io/badge/Node.js-Backend-green)
+![Express](https://img.shields.io/badge/Express.js-Framework-black)
+![MongoDB](https://img.shields.io/badge/MongoDB-Database-green)
+![JWT](https://img.shields.io/badge/JWT-Authentication-blue)
+![License](https://img.shields.io/badge/License-MIT-orange)
+
+</div>
 
 ---
 
-## Quick Start
+## 🚀 About AcadScore
+
+AcadScore is a comprehensive educational and financial analytics platform that helps users:
+
+* Calculate **SGPA, CGPA, GPA conversions, and percentages**
+* Track academic performance across semesters
+* Generate professional academic reports
+* Manage secure user accounts with JWT authentication
+* Access salary, EMI, SIP, FD, and RD calculators
+* Analyze learning progress through dashboards and insights
+* Store and retrieve academic records securely
+
+Whether you're a student monitoring your GPA, a graduate preparing for placements, or a professional evaluating financial goals, AcadScore provides the tools needed to make informed decisions.
+
+---
+
+## ✨ Core Features
+
+### 🎓 Academic Tools
+
+* SGPA Calculator
+* CGPA Calculator
+* CGPA → Percentage Converter
+* Percentage → CGPA Converter
+* Attendance Calculator
+* Academic Record Management
+* Performance Analytics
+
+### 💰 Financial Tools
+
+* EMI Calculator
+* SIP Calculator
+* Fixed Deposit Calculator
+* Recurring Deposit Calculator
+* Salary & In-Hand Income Calculator
+
+### 🔐 Authentication & Security
+
+* User Registration & Login
+* JWT Access & Refresh Tokens
+* OTP-Based Password Recovery
+* Password Encryption with bcrypt
+* Role-Based Authorization
+
+### 📊 Analytics & Reporting
+
+* User Activity Tracking
+* Academic PDF Report Generation
+* Admin Dashboard Insights
+* Calculation History Monitoring
+
+### ⚙️ Enterprise-Ready Infrastructure
+
+* RESTful API Architecture
+* MongoDB Atlas Integration
+* Centralized Error Handling
+* Request Validation
+* Rate Limiting
+* Security Middleware
+* Production Deployment Ready
+
+---
+
+# 🚀 Quick Start
 
 ```bash
 cd backend
 npm install
-cp .env.example .env       # fill in your values
-node scripts/seedAdmin.js  # create first admin
-npm run dev                # start with nodemon
+cp .env.example .env
+node scripts/seedAdmin.js
+npm run dev
 ```
 
----
+Backend runs at:
 
-## Environment Variables
-
-| Variable | Description |
-|---|---|
-| `PORT` | Server port (default: 5000) |
-| `MONGODB_URI` | MongoDB Atlas connection string |
-| `JWT_SECRET` | Secret key for access tokens |
-| `JWT_EXPIRE` | Token expiry (e.g., `7d`) |
-| `JWT_REFRESH_SECRET` | Secret key for refresh tokens |
-| `JWT_REFRESH_EXPIRE` | Refresh token expiry (e.g., `30d`) |
-| `EMAIL_USER` | Gmail address for OTP emails |
-| `EMAIL_PASSWORD` | Gmail App Password |
-| `CLIENT_URL` | Frontend URL for CORS |
-
----
-
-## API Reference
-
-### Auth – `/api/auth`
-
-| Method | Endpoint | Auth | Description |
-|---|---|---|---|
-| POST | `/register` | ❌ | Register new user |
-| POST | `/login` | ❌ | Login, returns JWT |
-| GET | `/profile` | ✅ | Get logged-in user profile |
-| POST | `/refresh-token` | ❌ | Refresh JWT using refresh token |
-| POST | `/logout` | ✅ | Logout (invalidates refresh token) |
-| POST | `/forgot-password` | ❌ | Send OTP to email |
-| POST | `/reset-password` | ❌ | Reset password with OTP |
-
-### Academic Records – `/api/academic` (all protected)
-
-| Method | Endpoint | Description |
-|---|---|---|
-| POST | `/create` | Create semester record |
-| GET | `/all` | Get all records + CGPA |
-| GET | `/:id` | Get single record |
-| PUT | `/update/:id` | Update record |
-| DELETE | `/delete/:id` | Delete record |
-
-### Calculators – `/api/calculator` (public)
-
-| Method | Endpoint | Description |
-|---|---|---|
-| POST | `/sgpa` | Calculate SGPA from subjects |
-| POST | `/cgpa` | Calculate CGPA from semesters |
-| POST | `/cgpa-to-percentage` | Convert CGPA → Percentage |
-| POST | `/percentage-to-cgpa` | Convert Percentage → CGPA |
-| POST | `/attendance` | Calculate attendance % |
-| GET | `/history` | 🔒 User's calculation history |
-
-#### CGPA/Percentage formula options
-`standard` · `anna_university` · `jntu` · `vtu` · `mumbai`
-
-### Finance – `/api/finance` (public)
-
-| Method | Endpoint | Description |
-|---|---|---|
-| POST | `/emi` | EMI calculator |
-| POST | `/sip` | SIP maturity calculator |
-| POST | `/fd` | Fixed Deposit calculator |
-| POST | `/rd` | Recurring Deposit calculator |
-| POST | `/salary` | CTC → In-hand salary (India) |
-
-### Reports – `/api/reports` (protected)
-
-| Method | Endpoint | Description |
-|---|---|---|
-| POST | `/generate` | Download academic PDF report |
-
-### Admin – `/api/admin` (admin only)
-
-| Method | Endpoint | Description |
-|---|---|---|
-| GET | `/dashboard` | Stats: users, calculations, visitors |
-| GET | `/users` | List all users (paginated) |
-| DELETE | `/users/:id` | Delete user |
-| GET | `/calculations` | All calculations log |
-
-### Analytics – `/api/analytics`
-
-| Method | Endpoint | Auth | Description |
-|---|---|---|---|
-| POST | `/track` | ❌ | Track pageview/event |
-| GET | `/overview` | 🛡️ Admin | Analytics overview |
-
----
-
-## Request / Response Examples
-
-### SGPA
-```json
-POST /api/calculator/sgpa
-{
-  "subjects": [
-    { "credit": 4, "gradePoint": 9 },
-    { "credit": 3, "gradePoint": 8 },
-    { "credit": 4, "gradePoint": 7.5 }
-  ]
-}
-
-→ { "success": true, "sgpa": 8.27, "totalCredits": 11 }
-```
-
-### EMI
-```json
-POST /api/finance/emi
-{ "loanAmount": 500000, "annualInterestRate": 8.5, "tenureMonths": 60 }
-
-→ { "success": true, "emi": 10230, "totalInterest": 113800, "totalPayment": 613800 }
-```
-
-### Salary
-```json
-POST /api/finance/salary
-{ "annualCTC": 1200000 }
-
-→ {
-    "success": true,
-    "annualCTC": 1200000,
-    "monthlyGross": 100000,
-    "basicSalary": 50000,
-    "employeePF": 1800,
-    "estimatedAnnualTax": 0,
-    "monthlyInHand": 98000
-  }
-```
-
----
-
-## Security
-
-- **JWT** access + refresh token auth
-- **bcrypt** password hashing (cost factor 12)
-- **Helmet** security headers
-- **express-mongo-sanitize** against NoSQL injection
-- **hpp** HTTP parameter pollution protection
-- **Rate limiting**: 200 req/15min general, 20 req/15min on auth
-- **CORS** restricted to allowed origins
-
----
-
-## Deployment
-
-### Render / Railway
-1. Connect your GitHub repo
-2. Set all environment variables
-3. Build command: `npm install`
-4. Start command: `npm start`
-
-### VPS (PM2)
 ```bash
-npm install -g pm2
-pm2 start server.js --name acadscore-api
-pm2 save && pm2 startup
+http://localhost:5000
 ```
 
 ---
 
-## Project Structure
+# 🌐 API Modules
 
-```
+## 🔐 Authentication
+
+`/api/auth`
+
+Secure authentication system with JWT access and refresh tokens.
+
+### Features
+
+* Register
+* Login
+* Logout
+* Refresh Tokens
+* Forgot Password
+* OTP Verification
+* Password Reset
+
+---
+
+## 🎓 Academic Management
+
+`/api/academic`
+
+Manage semester records and academic history.
+
+### Features
+
+* Create Records
+* Update Records
+* Delete Records
+* Calculate CGPA
+* View Academic Progress
+
+---
+
+## 📚 Academic Calculators
+
+`/api/calculator`
+
+Powerful GPA and percentage calculation services.
+
+Supported formulas:
+
+* Standard
+* Anna University
+* JNTU
+* VTU
+* Mumbai University
+
+---
+
+## 💰 Finance Calculators
+
+`/api/finance`
+
+Financial planning tools for students and professionals.
+
+### Includes
+
+* EMI Calculator
+* SIP Calculator
+* Fixed Deposit Calculator
+* Recurring Deposit Calculator
+* Salary Calculator
+
+---
+
+## 📄 Reports
+
+`/api/reports`
+
+Generate downloadable academic reports in PDF format.
+
+---
+
+## 🛡️ Admin Dashboard
+
+`/api/admin`
+
+Administrative controls for platform management.
+
+### Capabilities
+
+* User Management
+* Analytics Overview
+* Calculation Logs
+* Platform Statistics
+
+---
+
+## 📈 Analytics
+
+`/api/analytics`
+
+Track user engagement and application usage patterns.
+
+---
+
+# 🔒 Security Architecture
+
+AcadScore follows modern backend security practices:
+
+* JWT Authentication
+* Refresh Token Rotation
+* bcrypt Password Hashing
+* Helmet Security Headers
+* Rate Limiting Protection
+* MongoDB Injection Prevention
+* HPP Protection
+* Secure CORS Policies
+* Environment Variable Isolation
+
+---
+
+# 📊 Technology Stack
+
+| Layer          | Technology             |
+| -------------- | ---------------------- |
+| Runtime        | Node.js                |
+| Framework      | Express.js             |
+| Database       | MongoDB Atlas          |
+| Authentication | JWT                    |
+| Encryption     | bcrypt                 |
+| Email Service  | Nodemailer             |
+| Logging        | Winston                |
+| Development    | Nodemon                |
+| Deployment     | Render / Railway / VPS |
+
+---
+
+# 📁 Project Structure
+
+```text
 backend/
-├── config/         # DB connection
-├── controllers/    # Route handlers
-├── middleware/     # Auth, error, validation
-├── models/         # Mongoose schemas
-├── routes/         # Express routers
-├── scripts/        # Seed & setup scripts
-├── services/       # Business logic (calculators)
-├── utils/          # JWT, email, logger
-├── logs/           # Winston log files
+├── config/
+├── controllers/
+├── middleware/
+├── models/
+├── routes/
+├── services/
+├── scripts/
+├── utils/
+├── logs/
 ├── .env.example
 ├── package.json
 └── server.js
 ```
+
+---
+
+# ☁️ Deployment
+
+### Render
+
+```bash
+Build Command:
+npm install
+
+Start Command:
+npm start
+```
+
+### Railway
+
+```bash
+npm install
+npm start
+```
+
+### VPS + PM2
+
+```bash
+npm install -g pm2
+
+pm2 start server.js --name acadscore-api
+
+pm2 save
+pm2 startup
+```
+
+---
+
+# 🎯 Vision
+
+AcadScore aims to become a complete digital companion for students by combining academic performance tracking, financial planning, analytics, and intelligent reporting into a single platform.
+
+Our mission is simple:
+
+> Help students understand their progress, plan their future, and achieve their goals through accurate data, modern technology, and intuitive tools.
+
+---
+
+## ⭐ Support the Project
+
+If you find AcadScore useful:
+
+⭐ Star the repository
+🍴 Fork the project
+🐛 Report issues
+🚀 Contribute improvements
+
+Together, let's build smarter tools for education and career success.
