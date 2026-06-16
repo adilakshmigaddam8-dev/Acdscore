@@ -1,0 +1,302 @@
+2026-06-10 11:48:41 [INFO]: AcadScore server running on port 5000 [development]
+2026-06-10 11:48:42 [ERROR]: MongoDB connection failed: bad auth : authentication failed
+2026-06-10 12:03:31 [INFO]: AcadScore server running on port 5000 [development]
+2026-06-10 12:03:31 [INFO]: MongoDB Connected: ac-gkcyi1j-shard-00-02.wdyng7s.mongodb.net
+2026-06-10 12:04:33 [ERROR]: 404 - Route not found: / - / - GET - ::1
+2026-06-10 12:04:33 [INFO]: ::1 - - [10/Jun/2026:06:34:33 +0000] "GET / HTTP/1.1" 404 1014 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+2026-06-10 12:04:34 [ERROR]: 404 - Route not found: /favicon.ico - /favicon.ico - GET - ::1
+2026-06-10 12:04:34 [INFO]: ::1 - - [10/Jun/2026:06:34:34 +0000] "GET /favicon.ico HTTP/1.1" 404 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+2026-06-10 12:04:39 [ERROR]: 404 - Route not found: / - / - GET - ::1
+2026-06-10 12:04:39 [INFO]: ::1 - - [10/Jun/2026:06:34:39 +0000] "GET / HTTP/1.1" 404 1014 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+2026-06-10 12:05:04 [INFO]: ::1 - - [10/Jun/2026:06:35:04 +0000] "GET /api HTTP/1.1" 200 238 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+2026-06-10 12:17:09 [INFO]: AcadScore server running on port 5000 [development]
+2026-06-10 12:17:09 [INFO]: MongoDB Connected: ac-gkcyi1j-shard-00-00.wdyng7s.mongodb.net
+2026-06-10 12:17:19 [INFO]: ::1 - - [10/Jun/2026:06:47:19 +0000] "GET /api HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+2026-06-10 12:24:44 [INFO]: AcadScore server running on port 5000 [development]
+2026-06-10 12:24:45 [INFO]: MongoDB Connected: ac-gkcyi1j-shard-00-00.wdyng7s.mongodb.net
+2026-06-10 12:33:41 [INFO]: AcadScore server running on port 5000 [development]
+2026-06-10 12:33:41 [INFO]: MongoDB Connected: ac-gkcyi1j-shard-00-01.wdyng7s.mongodb.net
+2026-06-10 16:19:49 [INFO]: ✅ AcadScore running on port 5000 [development]
+2026-06-10 16:19:49 [INFO]:    Health: http://localhost:5000/health
+2026-06-10 16:19:49 [INFO]:    API:    http://localhost:5000/api
+2026-06-10 16:19:49 [INFO]:    App:    http://localhost:5000/
+2026-06-10 16:19:49 [INFO]: MongoDB Connected: ac-gkcyi1j-shard-00-02.wdyng7s.mongodb.net
+2026-06-10 16:20:36 [INFO]: ::1 - - [10/Jun/2026:10:50:36 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+2026-06-10 16:20:37 [INFO]: ::1 - - [10/Jun/2026:10:50:37 +0000] "GET /main.js HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+2026-06-10 16:22:34 [INFO]: ::1 - - [10/Jun/2026:10:52:34 +0000] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+2026-06-10 16:34:36 [INFO]: SIGINT received. Shutting down gracefully...
+2026-06-10 16:34:53 [INFO]: ✅ AcadScore running on port 5000 [development]
+2026-06-10 16:34:53 [INFO]:    Health: http://localhost:5000/health
+2026-06-10 16:34:53 [INFO]:    API:    http://localhost:5000/api
+2026-06-10 16:34:53 [INFO]:    App:    http://localhost:5000/
+2026-06-10 16:34:53 [INFO]: MongoDB Connected: ac-gkcyi1j-shard-00-00.wdyng7s.mongodb.net
+2026-06-10 16:35:02 [INFO]: ::1 - - [10/Jun/2026:11:05:02 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+2026-06-10 16:35:03 [INFO]: ::1 - - [10/Jun/2026:11:05:03 +0000] "GET /main.js HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+2026-06-10 16:43:30 [INFO]: ✅  AcadScore running on port 5000 [development]
+2026-06-10 16:43:30 [INFO]:     Health : http://localhost:5000/health
+2026-06-10 16:43:30 [INFO]:     API    : http://localhost:5000/api
+2026-06-10 16:43:30 [INFO]:     App    : http://localhost:5000/
+2026-06-10 16:43:30 [INFO]:     Static : serving frontend from C:\project\backend\public
+2026-06-10 16:43:30 [INFO]:     JS files: main.js
+2026-06-10 16:43:31 [INFO]: MongoDB Connected: ac-gkcyi1j-shard-00-02.wdyng7s.mongodb.net
+2026-06-10 16:43:41 [INFO]: ::1 - - [10/Jun/2026:11:13:41 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+2026-06-10 16:43:41 [INFO]: ::1 - - [10/Jun/2026:11:13:41 +0000] "GET /main.js HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+2026-06-10 16:46:50 [INFO]: SIGINT received – shutting down gracefully
+2026-06-10 16:47:01 [INFO]: ✅  AcadScore running on port 5000 [development]
+2026-06-10 16:47:01 [INFO]:     Health : http://localhost:5000/health
+2026-06-10 16:47:01 [INFO]:     API    : http://localhost:5000/api
+2026-06-10 16:47:01 [INFO]:     App    : http://localhost:5000/
+2026-06-10 16:47:01 [INFO]:     Static : serving frontend from C:\project\backend\public
+2026-06-10 16:47:01 [INFO]:     JS files: main.js
+2026-06-10 16:47:01 [INFO]: MongoDB Connected: ac-gkcyi1j-shard-00-02.wdyng7s.mongodb.net
+2026-06-10 16:47:09 [INFO]: ::1 - - [10/Jun/2026:11:17:09 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+2026-06-10 16:47:09 [INFO]: ::1 - - [10/Jun/2026:11:17:09 +0000] "GET /main.js HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+2026-06-10 16:54:43 [INFO]: ::1 - - [10/Jun/2026:11:24:43 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+2026-06-10 16:54:43 [INFO]: ::1 - - [10/Jun/2026:11:24:43 +0000] "GET /main.js HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+2026-06-10 16:54:44 [INFO]: ::1 - - [10/Jun/2026:11:24:44 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+2026-06-10 16:54:45 [INFO]: ::1 - - [10/Jun/2026:11:24:45 +0000] "GET /main.js HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+2026-06-10 16:55:35 [INFO]: ::1 - - [10/Jun/2026:11:25:35 +0000] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+2026-06-10 16:56:20 [INFO]: ::1 - - [10/Jun/2026:11:26:20 +0000] "GET /main.js HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+2026-06-10 17:01:07 [INFO]: SIGINT received – shutting down gracefully
+2026-06-10 17:01:54 [INFO]: ✅  AcadScore running on port 5000 [development]
+2026-06-10 17:01:54 [INFO]:     Health : http://localhost:5000/health
+2026-06-10 17:01:54 [INFO]:     API    : http://localhost:5000/api
+2026-06-10 17:01:54 [INFO]:     App    : http://localhost:5000/
+2026-06-10 17:01:54 [INFO]:     Static : serving frontend from C:\project\backend\public
+2026-06-10 17:01:54 [INFO]:     JS files: main.js
+2026-06-10 17:01:54 [INFO]: MongoDB Connected: ac-gkcyi1j-shard-00-02.wdyng7s.mongodb.net
+2026-06-10 17:02:38 [INFO]: ::1 - - [10/Jun/2026:11:32:38 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+2026-06-10 17:02:38 [INFO]: ::1 - - [10/Jun/2026:11:32:38 +0000] "GET /main.js HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+2026-06-10 17:33:16 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-06-10 17:41:45 [INFO]: ::1 - - [10/Jun/2026:12:11:45 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+2026-06-10 17:41:45 [INFO]: ::1 - - [10/Jun/2026:12:11:45 +0000] "GET /main.js HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+2026-06-10 17:41:59 [INFO]: ::1 - - [10/Jun/2026:12:11:59 +0000] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+2026-06-10 20:45:29 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-06-16 10:14:43 [INFO]: ✅  AcadScore running on port 5000 [development]
+2026-06-16 10:14:43 [INFO]:     Health : http://localhost:5000/health
+2026-06-16 10:14:43 [INFO]:     API    : http://localhost:5000/api
+2026-06-16 10:14:43 [INFO]:     App    : http://localhost:5000/
+2026-06-16 10:14:43 [INFO]:     Static : serving frontend from C:\project\backend\public
+2026-06-16 10:14:43 [INFO]:     JS files: main.js
+2026-06-16 10:15:11 [INFO]: ::1 - - [16/Jun/2026:04:45:11 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 10:15:11 [INFO]: ::1 - - [16/Jun/2026:04:45:11 +0000] "GET /main.js HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 10:15:12 [INFO]: ::1 - - [16/Jun/2026:04:45:12 +0000] "GET /favicon.ico HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 10:15:13 [ERROR]: MongoDB connection failed: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+2026-06-16 10:20:21 [INFO]: ✅  AcadScore running on port 5000 [development]
+2026-06-16 10:20:21 [INFO]:     Health : http://localhost:5000/health
+2026-06-16 10:20:21 [INFO]:     API    : http://localhost:5000/api
+2026-06-16 10:20:21 [INFO]:     App    : http://localhost:5000/
+2026-06-16 10:20:21 [INFO]:     Static : serving frontend from C:\project\backend\public
+2026-06-16 10:20:21 [INFO]:     JS files: main.js
+2026-06-16 10:20:30 [INFO]: ::1 - - [16/Jun/2026:04:50:30 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 10:20:30 [INFO]: ::1 - - [16/Jun/2026:04:50:30 +0000] "GET /main.js HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 10:20:31 [INFO]: ::1 - - [16/Jun/2026:04:50:31 +0000] "GET /favicon.ico HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 10:20:45 [INFO]: ::1 - - [16/Jun/2026:04:50:45 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 10:20:45 [INFO]: ::1 - - [16/Jun/2026:04:50:45 +0000] "GET /main.js HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 10:20:46 [INFO]: ::1 - - [16/Jun/2026:04:50:46 +0000] "GET /favicon.ico HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 10:20:52 [ERROR]: MongoDB connection failed: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+2026-06-16 10:29:07 [INFO]: ✅  AcadScore running on port 5000 [development]
+2026-06-16 10:29:07 [INFO]:     Health : http://localhost:5000/health
+2026-06-16 10:29:07 [INFO]:     API    : http://localhost:5000/api
+2026-06-16 10:29:07 [INFO]:     App    : http://localhost:5000/
+2026-06-16 10:29:07 [INFO]:     Static : serving frontend from C:\project\backend\public
+2026-06-16 10:29:07 [INFO]:     JS files: main.js
+2026-06-16 10:29:08 [INFO]: MongoDB Connected: ac-gkcyi1j-shard-00-02.wdyng7s.mongodb.net
+2026-06-16 10:29:27 [INFO]: ::1 - - [16/Jun/2026:04:59:27 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 10:29:27 [INFO]: ::1 - - [16/Jun/2026:04:59:27 +0000] "GET /main.js HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 10:29:28 [INFO]: ::1 - - [16/Jun/2026:04:59:28 +0000] "GET /favicon.ico HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 10:30:52 [INFO]: ::1 - - [16/Jun/2026:05:00:52 +0000] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 10:31:22 [INFO]: ::1 - - [16/Jun/2026:05:01:22 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 10:31:22 [INFO]: ::1 - - [16/Jun/2026:05:01:22 +0000] "GET /main.js HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 10:31:23 [INFO]: ::1 - - [16/Jun/2026:05:01:23 +0000] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 10:31:23 [INFO]: ::1 - - [16/Jun/2026:05:01:23 +0000] "GET /favicon.ico HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 10:41:04 [INFO]: SIGINT received – shutting down gracefully
+2026-06-16 10:41:18 [INFO]: ✅  AcadScore running on port 5000 [development]
+2026-06-16 10:41:18 [INFO]:     Health : http://localhost:5000/health
+2026-06-16 10:41:18 [INFO]:     API    : http://localhost:5000/api
+2026-06-16 10:41:18 [INFO]:     App    : http://localhost:5000/
+2026-06-16 10:41:18 [INFO]:     Static : serving frontend from C:\project\backend\public
+2026-06-16 10:41:18 [INFO]:     JS files: main.js
+2026-06-16 10:41:19 [INFO]: MongoDB Connected: ac-gkcyi1j-shard-00-02.wdyng7s.mongodb.net
+2026-06-16 10:41:35 [INFO]: ::1 - - [16/Jun/2026:05:11:35 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 10:41:36 [INFO]: ::1 - - [16/Jun/2026:05:11:36 +0000] "GET /main.js HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 10:41:37 [INFO]: ::1 - - [16/Jun/2026:05:11:37 +0000] "GET /favicon.ico HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 10:49:00 [INFO]: ::1 - - [16/Jun/2026:05:19:00 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 10:49:00 [INFO]: ::1 - - [16/Jun/2026:05:19:00 +0000] "GET /main.js HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 10:49:01 [INFO]: ::1 - - [16/Jun/2026:05:19:01 +0000] "GET /favicon.ico HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 10:49:01 [INFO]: ::1 - - [16/Jun/2026:05:19:01 +0000] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 10:51:15 [INFO]: ::1 - - [16/Jun/2026:05:21:15 +0000] "GET /favicon.ico HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 11:09:40 [INFO]: SIGINT received – shutting down gracefully
+2026-06-16 11:09:55 [INFO]: ✅  AcadScore running on port 5000 [development]
+2026-06-16 11:09:55 [INFO]:     Health : http://localhost:5000/health
+2026-06-16 11:09:55 [INFO]:     API    : http://localhost:5000/api
+2026-06-16 11:09:55 [INFO]:     App    : http://localhost:5000/
+2026-06-16 11:09:55 [INFO]:     Static : serving frontend from C:\project\backend\public
+2026-06-16 11:09:55 [INFO]:     JS files: main.js
+2026-06-16 11:09:56 [INFO]: MongoDB Connected: ac-gkcyi1j-shard-00-00.wdyng7s.mongodb.net
+2026-06-16 11:10:05 [INFO]: ::1 - - [16/Jun/2026:05:40:05 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 11:10:05 [INFO]: ::1 - - [16/Jun/2026:05:40:05 +0000] "GET /main.js HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 11:10:06 [INFO]: ::1 - - [16/Jun/2026:05:40:06 +0000] "GET /favicon.ico HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 11:10:09 [INFO]: ::1 - - [16/Jun/2026:05:40:09 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 11:10:09 [INFO]: ::1 - - [16/Jun/2026:05:40:09 +0000] "GET /main.js HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 11:10:09 [INFO]: ::1 - - [16/Jun/2026:05:40:09 +0000] "GET /favicon.ico HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 11:11:46 [INFO]: ::1 - - [16/Jun/2026:05:41:46 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 11:11:46 [INFO]: ::1 - - [16/Jun/2026:05:41:46 +0000] "GET /main.js HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 11:11:47 [INFO]: ::1 - - [16/Jun/2026:05:41:47 +0000] "GET /favicon.ico HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 11:11:55 [INFO]: ::1 - - [16/Jun/2026:05:41:55 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 11:11:55 [INFO]: ::1 - - [16/Jun/2026:05:41:55 +0000] "GET /main.js HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 11:11:55 [INFO]: ::1 - - [16/Jun/2026:05:41:55 +0000] "GET /favicon.ico HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 11:15:15 [INFO]: SIGINT received – shutting down gracefully
+2026-06-16 11:15:26 [INFO]: ✅  AcadScore running on port 5000 [development]
+2026-06-16 11:15:26 [INFO]:     Health : http://localhost:5000/health
+2026-06-16 11:15:26 [INFO]:     API    : http://localhost:5000/api
+2026-06-16 11:15:26 [INFO]:     App    : http://localhost:5000/
+2026-06-16 11:15:26 [INFO]:     Static : serving frontend from C:\project\backend\public
+2026-06-16 11:15:26 [INFO]:     JS files: main.js
+2026-06-16 11:15:28 [INFO]: MongoDB Connected: ac-gkcyi1j-shard-00-02.wdyng7s.mongodb.net
+2026-06-16 11:15:35 [INFO]: ::1 - - [16/Jun/2026:05:45:35 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 11:15:36 [INFO]: ::1 - - [16/Jun/2026:05:45:36 +0000] "GET /main.js HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 11:15:36 [INFO]: ::1 - - [16/Jun/2026:05:45:36 +0000] "GET /favicon.ico HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 11:29:24 [INFO]: ::1 - - [16/Jun/2026:05:59:24 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 11:29:24 [INFO]: ::1 - - [16/Jun/2026:05:59:24 +0000] "GET /main.js HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 11:29:24 [INFO]: ::1 - - [16/Jun/2026:05:59:24 +0000] "GET /favicon.ico HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 11:36:13 [INFO]: ::1 - - [16/Jun/2026:06:06:13 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 11:36:14 [INFO]: ::1 - - [16/Jun/2026:06:06:14 +0000] "GET /main.js HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 11:36:14 [INFO]: ::1 - - [16/Jun/2026:06:06:14 +0000] "GET /favicon.ico HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 11:47:56 [INFO]: ::1 - - [16/Jun/2026:06:17:56 +0000] "GET /favicon.ico HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 11:48:25 [INFO]: ::1 - - [16/Jun/2026:06:18:25 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 11:48:25 [INFO]: ::1 - - [16/Jun/2026:06:18:25 +0000] "GET /main.js HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 11:48:25 [INFO]: ::1 - - [16/Jun/2026:06:18:25 +0000] "GET /favicon.ico HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 11:53:11 [INFO]: ::1 - - [16/Jun/2026:06:23:11 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 11:53:11 [INFO]: ::1 - - [16/Jun/2026:06:23:11 +0000] "GET /main.js HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 11:53:11 [INFO]: ::1 - - [16/Jun/2026:06:23:11 +0000] "GET /favicon.ico HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 12:02:00 [INFO]: SIGINT received – shutting down gracefully
+2026-06-16 12:02:11 [INFO]: ✅  AcadScore running on port 5000 [development]
+2026-06-16 12:02:11 [INFO]:     Health : http://localhost:5000/health
+2026-06-16 12:02:11 [INFO]:     API    : http://localhost:5000/api
+2026-06-16 12:02:11 [INFO]:     App    : http://localhost:5000/
+2026-06-16 12:02:11 [INFO]:     Static : serving frontend from C:\project\backend\public
+2026-06-16 12:02:11 [INFO]:     JS files: main.js
+2026-06-16 12:02:12 [INFO]: MongoDB Connected: ac-gkcyi1j-shard-00-00.wdyng7s.mongodb.net
+2026-06-16 12:02:24 [INFO]: ::1 - - [16/Jun/2026:06:32:24 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 12:02:24 [INFO]: ::1 - - [16/Jun/2026:06:32:24 +0000] "GET /main.js HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 12:02:25 [INFO]: ::1 - - [16/Jun/2026:06:32:25 +0000] "GET /favicon.ico HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 12:04:02 [INFO]: SIGINT received – shutting down gracefully
+2026-06-16 12:04:18 [INFO]: ✅  AcadScore running on port 5000 [development]
+2026-06-16 12:04:18 [INFO]:     Health : http://localhost:5000/health
+2026-06-16 12:04:18 [INFO]:     API    : http://localhost:5000/api
+2026-06-16 12:04:18 [INFO]:     App    : http://localhost:5000/
+2026-06-16 12:04:18 [INFO]:     Static : serving frontend from C:\project\backend\public
+2026-06-16 12:04:18 [INFO]:     JS files: main.js
+2026-06-16 12:04:19 [INFO]: MongoDB Connected: ac-gkcyi1j-shard-00-02.wdyng7s.mongodb.net
+2026-06-16 12:04:27 [INFO]: ::1 - - [16/Jun/2026:06:34:27 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 12:04:27 [INFO]: ::1 - - [16/Jun/2026:06:34:27 +0000] "GET /main.js HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 12:04:27 [INFO]: ::1 - - [16/Jun/2026:06:34:27 +0000] "GET /favicon.ico HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 12:10:06 [INFO]: SIGINT received – shutting down gracefully
+2026-06-16 12:10:19 [INFO]: ✅  AcadScore running on port 5000 [development]
+2026-06-16 12:10:19 [INFO]:     Health : http://localhost:5000/health
+2026-06-16 12:10:19 [INFO]:     API    : http://localhost:5000/api
+2026-06-16 12:10:19 [INFO]:     App    : http://localhost:5000/
+2026-06-16 12:10:19 [INFO]:     Static : serving frontend from C:\project\backend\public
+2026-06-16 12:10:19 [INFO]:     JS files: main.js
+2026-06-16 12:10:19 [INFO]: MongoDB Connected: ac-gkcyi1j-shard-00-00.wdyng7s.mongodb.net
+2026-06-16 12:10:29 [INFO]: ::1 - - [16/Jun/2026:06:40:29 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 12:10:29 [INFO]: ::1 - - [16/Jun/2026:06:40:29 +0000] "GET /main.js HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 12:10:30 [INFO]: ::1 - - [16/Jun/2026:06:40:30 +0000] "GET /favicon.ico HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 12:16:46 [INFO]: SIGINT received – shutting down gracefully
+2026-06-16 12:23:52 [INFO]: ✅  AcadScore running on port 5000 [development]
+2026-06-16 12:23:52 [INFO]:     Health : http://localhost:5000/health
+2026-06-16 12:23:52 [INFO]:     API    : http://localhost:5000/api
+2026-06-16 12:23:52 [INFO]:     App    : http://localhost:5000/
+2026-06-16 12:23:52 [INFO]:     Static : serving frontend from C:\project\backend\public
+2026-06-16 12:23:52 [INFO]:     JS files: main.js
+2026-06-16 12:23:53 [INFO]: MongoDB Connected: ac-gkcyi1j-shard-00-00.wdyng7s.mongodb.net
+2026-06-16 12:24:02 [INFO]: ::1 - - [16/Jun/2026:06:54:02 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 12:24:02 [INFO]: ::1 - - [16/Jun/2026:06:54:02 +0000] "GET /main.js HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 12:24:03 [INFO]: ::1 - - [16/Jun/2026:06:54:03 +0000] "GET /favicon.ico HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 12:24:31 [ERROR]: 404 - Route not found: /api/contact - /api/contact - POST - ::1
+2026-06-16 12:24:31 [INFO]: ::1 - - [16/Jun/2026:06:54:31 +0000] "POST /api/contact HTTP/1.1" 404 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 12:24:36 [ERROR]: 404 - Route not found: /api/contact - /api/contact - POST - ::1
+2026-06-16 12:24:36 [INFO]: ::1 - - [16/Jun/2026:06:54:36 +0000] "POST /api/contact HTTP/1.1" 404 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 12:26:44 [INFO]: ::1 - - [16/Jun/2026:06:56:44 +0000] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 12:26:49 [ERROR]: 404 - Route not found: /api/contact - /api/contact - POST - ::1
+2026-06-16 12:26:49 [INFO]: ::1 - - [16/Jun/2026:06:56:49 +0000] "POST /api/contact HTTP/1.1" 404 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 12:36:11 [INFO]: SIGINT received – shutting down gracefully
+2026-06-16 12:36:23 [INFO]: ✅  AcadScore running on port 5000 [development]
+2026-06-16 12:36:23 [INFO]:     Health : http://localhost:5000/health
+2026-06-16 12:36:23 [INFO]:     API    : http://localhost:5000/api
+2026-06-16 12:36:23 [INFO]:     App    : http://localhost:5000/
+2026-06-16 12:36:23 [INFO]:     Static : serving frontend from C:\project\backend\public
+2026-06-16 12:36:23 [INFO]:     JS files: main.js
+2026-06-16 12:36:24 [INFO]: MongoDB Connected: ac-gkcyi1j-shard-00-00.wdyng7s.mongodb.net
+2026-06-16 12:36:37 [INFO]: ::1 - - [16/Jun/2026:07:06:37 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 12:36:38 [INFO]: ::1 - - [16/Jun/2026:07:06:38 +0000] "GET /main.js HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 12:36:38 [INFO]: ::1 - - [16/Jun/2026:07:06:38 +0000] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 12:36:38 [INFO]: ::1 - - [16/Jun/2026:07:06:38 +0000] "GET /favicon.ico HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 12:37:02 [ERROR]: 500 - self-signed certificate in certificate chain - /api/contact - POST - ::1
+2026-06-16 12:37:02 [INFO]: ::1 - - [16/Jun/2026:07:07:02 +0000] "POST /api/contact HTTP/1.1" 500 369 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 12:37:47 [INFO]: SIGINT received – shutting down gracefully
+2026-06-16 12:39:13 [INFO]: ✅  AcadScore running on port 5000 [development]
+2026-06-16 12:39:13 [INFO]:     Health : http://localhost:5000/health
+2026-06-16 12:39:13 [INFO]:     API    : http://localhost:5000/api
+2026-06-16 12:39:13 [INFO]:     App    : http://localhost:5000/
+2026-06-16 12:39:13 [INFO]:     Static : serving frontend from C:\project\backend\public
+2026-06-16 12:39:13 [INFO]:     JS files: main.js
+2026-06-16 12:39:14 [INFO]: MongoDB Connected: ac-gkcyi1j-shard-00-02.wdyng7s.mongodb.net
+2026-06-16 12:39:38 [INFO]: ::1 - - [16/Jun/2026:07:09:38 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 12:39:38 [INFO]: ::1 - - [16/Jun/2026:07:09:38 +0000] "GET /main.js HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 12:39:40 [INFO]: ::1 - - [16/Jun/2026:07:09:40 +0000] "GET /favicon.ico HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 12:40:33 [ERROR]: 500 - self-signed certificate in certificate chain - /api/contact - POST - ::1
+2026-06-16 12:40:33 [INFO]: ::1 - - [16/Jun/2026:07:10:33 +0000] "POST /api/contact HTTP/1.1" 500 369 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 12:40:37 [ERROR]: 500 - self-signed certificate in certificate chain - /api/contact - POST - ::1
+2026-06-16 12:40:37 [INFO]: ::1 - - [16/Jun/2026:07:10:37 +0000] "POST /api/contact HTTP/1.1" 500 369 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 12:40:41 [ERROR]: 500 - self-signed certificate in certificate chain - /api/contact - POST - ::1
+2026-06-16 12:40:41 [INFO]: ::1 - - [16/Jun/2026:07:10:41 +0000] "POST /api/contact HTTP/1.1" 500 369 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 12:42:55 [INFO]: ::1 - - [16/Jun/2026:07:12:55 +0000] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 12:42:58 [ERROR]: 500 - self-signed certificate in certificate chain - /api/contact - POST - ::1
+2026-06-16 12:42:58 [INFO]: ::1 - - [16/Jun/2026:07:12:58 +0000] "POST /api/contact HTTP/1.1" 500 369 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 12:55:39 [INFO]: ✅  AcadScore running on port 5000 [development]
+2026-06-16 12:55:39 [INFO]:     Health : http://localhost:5000/health
+2026-06-16 12:55:39 [INFO]:     API    : http://localhost:5000/api
+2026-06-16 12:55:39 [INFO]:     App    : http://localhost:5000/
+2026-06-16 12:55:39 [INFO]:     Static : serving frontend from C:\project\backend\public
+2026-06-16 12:55:39 [INFO]:     JS files: main.js
+2026-06-16 12:55:40 [INFO]: MongoDB Connected: ac-gkcyi1j-shard-00-00.wdyng7s.mongodb.net
+2026-06-16 12:56:21 [INFO]: ::1 - - [16/Jun/2026:07:26:21 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 12:56:21 [INFO]: ::1 - - [16/Jun/2026:07:26:21 +0000] "GET /main.js HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 12:56:21 [INFO]: ::1 - - [16/Jun/2026:07:26:21 +0000] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 12:56:22 [INFO]: ::1 - - [16/Jun/2026:07:26:22 +0000] "GET /favicon.ico HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 12:56:48 [INFO]: ::1 - - [16/Jun/2026:07:26:48 +0000] "POST /api/contact HTTP/1.1" 500 72 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 13:32:06 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-06-16 13:39:40 [INFO]: SIGINT received – shutting down gracefully
+2026-06-16 13:39:52 [INFO]: ✅  AcadScore running on port 5000 [development]
+2026-06-16 13:39:52 [INFO]:     Health : http://localhost:5000/health
+2026-06-16 13:39:52 [INFO]:     API    : http://localhost:5000/api
+2026-06-16 13:39:52 [INFO]:     App    : http://localhost:5000/
+2026-06-16 13:39:52 [INFO]:     Static : serving frontend from C:\project\backend\public
+2026-06-16 13:39:52 [INFO]:     JS files: main.js
+2026-06-16 13:39:53 [INFO]: MongoDB Connected: ac-gkcyi1j-shard-00-02.wdyng7s.mongodb.net
+2026-06-16 13:40:39 [INFO]: ::1 - - [16/Jun/2026:08:10:39 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 13:40:40 [INFO]: ::1 - - [16/Jun/2026:08:10:40 +0000] "GET /main.js HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 13:40:40 [INFO]: ::1 - - [16/Jun/2026:08:10:40 +0000] "GET /favicon.ico HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 13:41:48 [INFO]: ::1 - - [16/Jun/2026:08:11:48 +0000] "POST /api/contact HTTP/1.1" 200 53 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 13:41:51 [INFO]: ::1 - - [16/Jun/2026:08:11:51 +0000] "POST /api/contact HTTP/1.1" 200 53 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 13:44:11 [INFO]: ::1 - - [16/Jun/2026:08:14:11 +0000] "POST /api/contact HTTP/1.1" 200 53 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 13:46:36 [INFO]: ::1 - - [16/Jun/2026:08:16:36 +0000] "POST /api/contact HTTP/1.1" 200 53 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 13:53:29 [INFO]: ::1 - - [16/Jun/2026:08:23:29 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 13:53:29 [INFO]: ::1 - - [16/Jun/2026:08:23:29 +0000] "GET /main.js HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 13:53:30 [INFO]: ::1 - - [16/Jun/2026:08:23:30 +0000] "GET /favicon.ico HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 13:54:04 [INFO]: ::1 - - [16/Jun/2026:08:24:04 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 13:54:04 [INFO]: ::1 - - [16/Jun/2026:08:24:04 +0000] "GET /main.js HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 13:54:04 [INFO]: ::1 - - [16/Jun/2026:08:24:04 +0000] "GET /favicon.ico HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 13:55:46 [INFO]: ::1 - - [16/Jun/2026:08:25:46 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 13:55:46 [INFO]: ::1 - - [16/Jun/2026:08:25:46 +0000] "GET /main.js HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 13:55:47 [INFO]: ::1 - - [16/Jun/2026:08:25:47 +0000] "GET /favicon.ico HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-16 14:17:53 [INFO]: ✅  AcadScore running on port 5000 [development]
+2026-06-16 14:17:53 [INFO]:     Health : http://localhost:5000/health
+2026-06-16 14:17:53 [INFO]:     API    : http://localhost:5000/api
+2026-06-16 14:17:53 [INFO]:     App    : http://localhost:5000/
+2026-06-16 14:17:53 [INFO]:     Static : serving frontend from C:\project\backend\public
+2026-06-16 14:17:53 [INFO]:     JS files: main.js
+2026-06-16 14:17:54 [INFO]: MongoDB Connected: ac-gkcyi1j-shard-00-02.wdyng7s.mongodb.net
+2026-06-16 14:18:38 [INFO]: SIGINT received – shutting down gracefully

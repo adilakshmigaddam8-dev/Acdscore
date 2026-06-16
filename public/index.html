@@ -1,0 +1,1678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CGPA & SGPA Calculator – Free GPA, Percentage Converter | AcadScore</title>
+<meta name="description" content="Free professional CGPA Calculator, SGPA Calculator, CGPA to Percentage Converter. Supports Anna University, JNTU, VTU formulas. Banking & Job application ready. Generate PDF reports.">
+<meta name="keywords" content="CGPA calculator, SGPA calculator, CGPA to percentage, percentage to CGPA, Anna University calculator, JNTU GPA, VTU percentage, GPA calculator India, engineering GPA">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="AcadScore – Professional CGPA & SGPA Calculator">
+<meta property="og:description" content="Calculate CGPA, SGPA, convert to percentage. Supports all major Indian university formulas.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#1a56db">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --blue: #1a56db;
+    --blue-light: #3b82f6;
+    --blue-dark: #1e40af;
+    --indigo: #4f46e5;
+    --cyan: #06b6d4;
+    --emerald: #10b981;
+    --amber: #f59e0b;
+    --rose: #f43f5e;
+    --violet: #7c3aed;
+    --bg: #f0f4ff;
+    --surface: #ffffff;
+    --surface2: #f8faff;
+    --border: #dde5f7;
+    --text: #0f172a;
+    --text2: #475569;
+    --text3: #94a3b8;
+    --shadow: 0 1px 3px rgba(26,86,219,.08), 0 8px 24px rgba(26,86,219,.06);
+    --shadow-lg: 0 4px 6px rgba(26,86,219,.07), 0 20px 48px rgba(26,86,219,.12);
+    --radius: 14px;
+    --radius-sm: 8px;
+    --radius-lg: 20px;
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+  .dark {
+    --bg: #0b0f1a;
+    --surface: #131929;
+    --surface2: #1a2235;
+    --border: #1e2d47;
+    --text: #f1f5f9;
+    --text2: #94a3b8;
+    --text3: #475569;
+    --shadow: 0 1px 3px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
+    --shadow-lg: 0 4px 6px rgba(0,0,0,.3), 0 20px 48px rgba(0,0,0,.35);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    transition: background .3s, color .3s;
+    font-size: 15px;
+  }
+
+  /* HEADER */
+  header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    position: sticky; top: 0; z-index: 100;
+    box-shadow: var(--shadow);
+  }
+  .header-inner {
+    max-width: 1280px;
+    margin: auto;
+    padding: 0 20px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .logo {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--blue);
+    text-decoration: none;
+    display: flex; align-items: center; gap: 8px;
+    flex-shrink: 0;
+  }
+  .logo-icon {
+    width: 32px; height: 32px;
+    background: linear-gradient(135deg, var(--blue), var(--indigo));
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 16px;
+  }
+  .nav {
+    display: flex; gap: 4px;
+    flex: 1;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .nav::-webkit-scrollbar { display: none; }
+  .nav-btn {
+    padding: 6px 14px;
+    border: none; background: none;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--text2);
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+    white-space: nowrap;
+    transition: all .2s;
+  }
+  .nav-btn:hover, .nav-btn.active {
+    background: #eef2ff;
+    color: var(--blue);
+  }
+  .dark .nav-btn:hover, .dark .nav-btn.active {
+    background: #1e2d47;
+    color: var(--blue-light);
+  }
+  .header-actions { display: flex; gap: 8px; align-items: center; flex-shrink: 0; }
+  .icon-btn {
+    width: 36px; height: 36px;
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+    color: var(--text2);
+    transition: all .2s;
+  }
+  .icon-btn:hover { border-color: var(--blue); color: var(--blue); }
+
+  /* AD BANNER */
+  .ad-banner {
+    background: linear-gradient(90deg, #eef2ff, #f0f9ff);
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+    padding: 8px 20px;
+    font-size: 12px;
+    color: var(--text3);
+    letter-spacing: .5px;
+  }
+  .dark .ad-banner { background: linear-gradient(90deg, #1a2235, #0f1e35); }
+  .ad-label {
+    display: inline-block;
+    background: var(--border);
+    color: var(--text3);
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 10px;
+    margin-right: 8px;
+  }
+
+  /* MAIN LAYOUT */
+  .layout {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 24px 20px;
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 24px;
+    align-items: start;
+  }
+  @media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
+
+  /* PAGES */
+  .page { display: none; }
+  .page.active { display: block; }
+
+  /* CARDS */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+  }
+  .card-title {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 4px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .card-subtitle { font-size: 13px; color: var(--text2); margin-bottom: 20px; }
+  .badge {
+    font-size: 11px; font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 20px;
+    background: #eef2ff; color: var(--blue);
+    letter-spacing: .3px;
+  }
+  .dark .badge { background: #1e2d47; color: var(--blue-light); }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, var(--blue) 0%, var(--indigo) 100%);
+    border-radius: var(--radius-lg);
+    padding: 32px 28px;
+    color: white;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 180px; height: 180px;
+    background: rgba(255,255,255,.08);
+    border-radius: 50%;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; right: 60px;
+    width: 240px; height: 240px;
+    background: rgba(255,255,255,.05);
+    border-radius: 50%;
+  }
+  .hero h1 { font-family: var(--font-display); font-size: 26px; font-weight: 700; margin-bottom: 8px; }
+  .hero p { font-size: 14px; opacity: .85; line-height: 1.6; max-width: 480px; }
+  .hero-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+  .hero-chip {
+    background: rgba(255,255,255,.18);
+    border: 1px solid rgba(255,255,255,.25);
+    color: white;
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 12.5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background .2s;
+    backdrop-filter: blur(4px);
+  }
+  .hero-chip:hover { background: rgba(255,255,255,.3); }
+
+  /* QUICK TOOLS GRID */
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .tool-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 14px;
+    cursor: pointer;
+    transition: all .2s;
+    text-align: center;
+  }
+  .tool-card:hover {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(26,86,219,.1);
+    transform: translateY(-1px);
+  }
+  .tool-icon {
+    font-size: 26px;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .tool-name { font-size: 12.5px; font-weight: 600; color: var(--text); }
+  .tool-desc { font-size: 11px; color: var(--text3); margin-top: 3px; }
+
+  /* FORMS */
+  .form-row { display: grid; gap: 12px; margin-bottom: 14px; }
+  .form-row-2 { grid-template-columns: 1fr 1fr; }
+  .form-row-3 { grid-template-columns: 1fr 1fr 1fr; }
+  .form-row-4 { grid-template-columns: 2fr 1fr 1fr auto; }
+  @media (max-width: 600px) {
+    .form-row-2, .form-row-3, .form-row-4 { grid-template-columns: 1fr; }
+  }
+  label {
+    display: block;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--text2);
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: .4px;
+  }
+  input, select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--surface2);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 14px;
+    transition: border .2s, box-shadow .2s;
+    outline: none;
+  }
+  input:focus, select:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(26,86,219,.12);
+  }
+  input::placeholder { color: var(--text3); }
+
+  /* BUTTONS */
+  .btn {
+    padding: 10px 20px;
+    border-radius: var(--radius-sm);
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .2s;
+    display: inline-flex; align-items: center; gap: 6px;
+    white-space: nowrap;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--blue), var(--indigo));
+    color: white;
+    box-shadow: 0 2px 8px rgba(26,86,219,.3);
+  }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(26,86,219,.35); }
+  .btn-secondary {
+    background: var(--surface2);
+    color: var(--text);
+    border: 1.5px solid var(--border);
+  }
+  .btn-secondary:hover { border-color: var(--blue); color: var(--blue); }
+  .btn-danger {
+    background: #fff0f0;
+    color: var(--rose);
+    border: 1.5px solid #fecdd3;
+  }
+  .dark .btn-danger { background: #2a1520; border-color: #4a1520; }
+  .btn-danger:hover { background: var(--rose); color: white; }
+  .btn-sm { padding: 7px 14px; font-size: 12.5px; }
+  .btn-icon { padding: 8px; }
+  .btn-group { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+
+  /* SUBJECT ROW */
+  .subject-row {
+    display: grid;
+    grid-template-columns: 2fr 80px 100px 36px;
+    gap: 10px;
+    align-items: end;
+    padding: 12px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    margin-bottom: 8px;
+    animation: slideIn .2s ease;
+  }
+  @keyframes slideIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+  @media (max-width: 600px) { .subject-row { grid-template-columns: 1fr 1fr; } }
+  .remove-btn {
+    width: 36px; height: 36px;
+    border: 1.5px solid #fecdd3;
+    background: #fff0f0;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    color: var(--rose);
+    font-size: 16px;
+    display: flex; align-items: center; justify-content: center;
+    transition: all .2s;
+  }
+  .dark .remove-btn { background: #2a1520; border-color: #4a1520; }
+  .remove-btn:hover { background: var(--rose); color: white; border-color: var(--rose); }
+
+  /* RESULT BOX */
+  .result-box {
+    background: linear-gradient(135deg, #eef2ff, #e0f2fe);
+    border: 2px solid var(--blue);
+    border-radius: var(--radius);
+    padding: 24px;
+    text-align: center;
+    margin-top: 20px;
+    animation: popIn .3s ease;
+  }
+  .dark .result-box { background: linear-gradient(135deg, #1a2235, #0f1e35); }
+  @keyframes popIn { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: none; } }
+  .result-value {
+    font-family: var(--font-display);
+    font-size: 52px;
+    font-weight: 700;
+    color: var(--blue);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .result-label { font-size: 13px; font-weight: 600; color: var(--text2); text-transform: uppercase; letter-spacing: .8px; }
+  .result-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 16px; }
+  .result-stat {
+    background: var(--surface);
+    border-radius: var(--radius-sm);
+    padding: 12px;
+    text-align: center;
+  }
+  .result-stat-val { font-size: 20px; font-weight: 700; color: var(--text); }
+  .result-stat-lbl { font-size: 11px; color: var(--text3); margin-top: 2px; }
+
+  /* SEMESTER ROW */
+  .sem-row {
+    display: grid;
+    grid-template-columns: 1fr 120px 120px 36px;
+    gap: 10px;
+    align-items: end;
+    margin-bottom: 8px;
+  }
+  @media (max-width: 600px) { .sem-row { grid-template-columns: 1fr 1fr; } }
+
+  /* PROGRESS BAR */
+  .progress-bar-wrap { margin: 16px 0; }
+  .progress-label { display: flex; justify-content: space-between; font-size: 12px; color: var(--text2); margin-bottom: 6px; }
+  .progress-track {
+    height: 8px;
+    background: var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, var(--blue), var(--indigo));
+    transition: width .6s ease;
+  }
+
+  /* GRADE TABLE */
+  .grade-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .grade-table th {
+    background: var(--surface2);
+    padding: 10px 12px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    color: var(--text2);
+    border-bottom: 2px solid var(--border);
+  }
+  .grade-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+  }
+  .grade-table tr:hover td { background: var(--surface2); }
+  .gpa-pill {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  /* TABS */
+  .tabs { display: flex; gap: 4px; margin-bottom: 20px; flex-wrap: wrap; }
+  .tab-btn {
+    padding: 8px 16px;
+    border: 1.5px solid var(--border);
+    background: none;
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text2);
+    cursor: pointer;
+    transition: all .2s;
+  }
+  .tab-btn.active {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: white;
+    box-shadow: 0 2px 8px rgba(26,86,219,.3);
+  }
+  .tab-btn:not(.active):hover { border-color: var(--blue); color: var(--blue); }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* CHART */
+  .chart-wrap {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin-top: 16px;
+  }
+
+  /* CONVERTER */
+  .converter-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: center; }
+  @media (max-width: 600px) { .converter-grid { grid-template-columns: 1fr; } }
+  .arrow-box {
+    font-size: 24px;
+    color: var(--blue);
+    text-align: center;
+    padding-top: 24px;
+  }
+  .formula-chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 14px;
+    background: var(--surface2);
+    border: 1.5px solid var(--border);
+    border-radius: 20px;
+    font-size: 12.5px;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--text2);
+    transition: all .2s;
+    margin: 4px;
+  }
+  .formula-chip.active, .formula-chip:hover {
+    background: #eef2ff;
+    border-color: var(--blue);
+    color: var(--blue);
+  }
+  .dark .formula-chip.active, .dark .formula-chip:hover {
+    background: #1e2d47;
+  }
+
+  /* SIDEBAR */
+  .sidebar { position: sticky; top: 80px; }
+  .sidebar-ad {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+    text-align: center;
+    margin-bottom: 16px;
+    font-size: 12px;
+    color: var(--text3);
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .sidebar-ad-icon { font-size: 32px; opacity: .4; }
+  .quick-links { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; }
+  .quick-links h3 { font-size: 13px; font-weight: 700; color: var(--text2); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 12px; }
+  .quick-link {
+    display: flex; align-items: center; gap: 8px;
+    padding: 8px 10px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    color: var(--text2);
+    font-size: 13px;
+    font-weight: 500;
+    transition: all .2s;
+  }
+  .quick-link:hover { background: var(--surface2); color: var(--blue); }
+  .quick-link-icon { font-size: 16px; }
+
+  /* FOOTER */
+  footer {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    margin-top: 40px;
+  }
+  .footer-top {
+    max-width: 1280px;
+    margin: auto;
+    padding: 40px 20px 24px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 32px;
+  }
+  @media (max-width: 700px) { .footer-top { grid-template-columns: 1fr 1fr; } }
+  .footer-brand p { font-size: 13px; color: var(--text2); line-height: 1.7; margin-top: 10px; }
+  .footer-col h4 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--text2); margin-bottom: 12px; }
+  .footer-col a { display: block; font-size: 13px; color: var(--text3); text-decoration: none; margin-bottom: 7px; transition: color .2s; }
+  .footer-col a:hover { color: var(--blue); }
+  .footer-bottom {
+    border-top: 1px solid var(--border);
+    padding: 16px 20px;
+    max-width: 1280px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: var(--text3);
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .footer-ad {
+    background: var(--surface2);
+    border-top: 1px solid var(--border);
+    padding: 16px 20px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--text3);
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  /* GRADE REFERENCE */
+  .grade-ref-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px,1fr)); gap: 8px; }
+  .grade-ref-item {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 10px;
+    text-align: center;
+  }
+  .grade-letter { font-size: 22px; font-weight: 700; }
+  .grade-points { font-size: 11px; color: var(--text3); margin-top: 2px; }
+
+  /* NOTIFICATION */
+  .toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: #0f172a;
+    color: white;
+    padding: 12px 20px;
+    border-radius: var(--radius);
+    font-size: 14px;
+    font-weight: 500;
+    z-index: 999;
+    display: none;
+    box-shadow: var(--shadow-lg);
+    animation: slideUp .3s ease;
+  }
+  @keyframes slideUp { from { transform: translateY(16px); opacity: 0; } to { transform: none; opacity: 1; } }
+
+  /* UTILS */
+  .divider { height: 1px; background: var(--border); margin: 20px 0; }
+  .text-center { text-align: center; }
+  .text-muted { color: var(--text2); font-size: 13px; }
+  .mt-12 { margin-top: 12px; }
+  .mb-0 { margin-bottom: 0 !important; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 600px) { .grid-2 { grid-template-columns: 1fr; } }
+  .info-box {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: var(--radius-sm);
+    padding: 12px 14px;
+    font-size: 13px;
+    color: #1d4ed8;
+    margin-bottom: 16px;
+    display: flex; gap: 8px; align-items: flex-start;
+  }
+  .dark .info-box { background: #1e2d47; border-color: #1e40af; color: #93c5fd; }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+  .section-desc { font-size: 14px; color: var(--text2); margin-bottom: 24px; line-height: 1.6; }
+
+  /* Calculator specific */
+  .grading-system-select { margin-bottom: 16px; }
+  .grade-input-type { display: flex; gap: 8px; margin-bottom: 16px; }
+  .radio-pill {
+    flex: 1;
+    padding: 8px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    text-align: center;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text2);
+    transition: all .2s;
+    background: var(--surface2);
+  }
+  .radio-pill.active {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: white;
+  }
+  .color-blue { color: var(--blue); }
+  .color-emerald { color: var(--emerald); }
+  .color-amber { color: var(--amber); }
+  .color-rose { color: var(--rose); }
+  .fw-700 { font-weight: 700; }
+
+  /* SALARY/FINANCIAL CALCS */
+  .calc-result-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+  }
+  .calc-result-row:last-child { border-bottom: none; }
+  .calc-result-row .lbl { color: var(--text2); }
+  .calc-result-row .val { font-weight: 700; color: var(--text); }
+  .calc-result-row.highlight { background: var(--surface2); margin: 0 -8px; padding: 12px 8px; border-radius: var(--radius-sm); border: none; }
+  .calc-result-row.highlight .lbl { font-weight: 700; color: var(--text); }
+  .calc-result-row.highlight .val { color: var(--blue); font-size: 18px; }
+  
+  /* mobile nav */
+  .mobile-nav {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    display: none;
+    grid-template-columns: repeat(5,1fr);
+    z-index: 99;
+  }
+  @media (max-width: 700px) { .mobile-nav { display: grid; } .layout { padding-bottom: 80px; } }
+  .mob-nav-item {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 10px 4px;
+    cursor: pointer;
+    color: var(--text3);
+    font-size: 10px;
+    gap: 3px;
+    transition: color .2s;
+    border: none; background: none;
+  }
+  .mob-nav-item.active { color: var(--blue); }
+  .mob-nav-icon { font-size: 20px; }
+</style>
+</head>
+<body>
+
+<!-- AD BANNER TOP -->
+<div class="ad-banner">
+  <span class="ad-label">AD</span> Your ad could appear here · <a href="#" style="color:var(--blue)">Get AdSense Approved</a>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a class="logo" href="#" onclick="showPage('home')">
+      <div class="logo-icon">📊</div>
+      AcadScore
+    </a>
+   <nav class="nav">
+  <button class="nav-btn active" data-page="home">Home</button>
+  <button class="nav-btn" data-page="sgpa">SGPA Calc</button>
+  <button class="nav-btn" data-page="cgpa">CGPA Calc</button>
+  <button class="nav-btn" data-page="converter">Converter</button>
+  <button class="nav-btn" data-page="dashboard">Dashboard</button>
+  <button class="nav-btn" data-page="salary">Salary Tools</button>
+  <button class="nav-btn" data-page="banking">Banking Tools</button>
+  <button class="nav-btn" data-page="about">About</button>
+</nav>
+    <div class="header-actions">
+      <button class="icon-btn" onclick="toggleDark()" title="Toggle dark mode" id="darkBtn">🌙</button>
+    </div>
+  </div>
+</header>
+
+<div style="max-width:1280px;margin:auto;padding:0 20px">
+
+<!-- ========== HOME PAGE ========== -->
+<div class="page active" id="page-home">
+  <div class="layout">
+    <div>
+      <div class="hero">
+        <h1>Academic Score Calculator</h1>
+        <p>AcadScore empowers students to measure, analyze, and improve academic performance through advanced SGPA and CGPA calculators, percentage converters, progress dashboards, and professional financial tools—all in a single intuitive platform.
+</p>
+        <div class="hero-chips">
+          <span class="hero-chip" onclick="showPage('sgpa')">📚 SGPA Calculator</span>
+          <span class="hero-chip" onclick="showPage('cgpa')">🎓 CGPA Calculator</span>
+          <span class="hero-chip" onclick="showPage('converter')">🔄 CGPA ↔ %</span>
+          <span class="hero-chip" onclick="showPage('salary')">💰 Salary Calc</span>
+          <span class="hero-chip" onclick="showPage('banking')">🏦 EMI Calc</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">🎓 Education Tools</div>
+        <div class="card-subtitle">All the calculators a student needs</div>
+        <div class="tools-grid">
+          <div class="tool-card" onclick="showPage('sgpa')">
+            <span class="tool-icon">📚</span>
+            <div class="tool-name">SGPA Calculator</div>
+            <div class="tool-desc">Semester GPA</div>
+          </div>
+          <div class="tool-card" onclick="showPage('cgpa')">
+            <span class="tool-icon">🎓</span>
+            <div class="tool-name">CGPA Calculator</div>
+            <div class="tool-desc">Cumulative GPA</div>
+          </div>
+          <div class="tool-card" onclick="showPage('converter'); setConverterTab('cgpa-pct')">
+            <span class="tool-icon">🔄</span>
+            <div class="tool-name">CGPA → %</div>
+            <div class="tool-desc">Convert GPA</div>
+          </div>
+          <div class="tool-card" onclick="showPage('converter'); setConverterTab('pct-cgpa')">
+            <span class="tool-icon">📊</span>
+            <div class="tool-name">% → CGPA</div>
+            <div class="tool-desc">Reverse convert</div>
+          </div>
+          <div class="tool-card" onclick="showPage('sgpa'); document.getElementById('gradingSystem').value='percentage'">
+            <span class="tool-icon">📋</span>
+            <div class="tool-name">Marks Calc</div>
+            <div class="tool-desc">Percentage</div>
+          </div>
+          <div class="tool-card" onclick="showPage('dashboard')">
+            <span class="tool-icon">📈</span>
+            <div class="tool-name">GPA Trend</div>
+            <div class="tool-desc">Academic chart</div>
+          </div>
+          <div class="tool-card" onclick="showPage('attendance')">
+            <span class="tool-icon">🗓️</span>
+            <div class="tool-name">Attendance</div>
+            <div class="tool-desc">% Calculator</div>
+          </div>
+          <div class="tool-card" onclick="showPage('exam')">
+            <span class="tool-icon">✏️</span>
+            <div class="tool-name">Exam Score</div>
+            <div class="tool-desc">Marks to %</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">💼 Career & Finance Tools</div>
+        <div class="card-subtitle">Salary, tax, and financial calculators</div>
+        <div class="tools-grid">
+          <div class="tool-card" onclick="showPage('salary')">
+            <span class="tool-icon">💰</span>
+            <div class="tool-name">Salary Calc</div>
+            <div class="tool-desc">In-hand pay</div>
+          </div>
+          <div class="tool-card" onclick="showPage('salary'); showSalaryTab('ctc')">
+            <span class="tool-icon">📄</span>
+            <div class="tool-name">CTC Calc</div>
+            <div class="tool-desc">Breakup</div>
+          </div>
+          <div class="tool-card" onclick="showPage('salary'); showSalaryTab('tax')">
+            <span class="tool-icon">🧾</span>
+            <div class="tool-name">Income Tax</div>
+            <div class="tool-desc">FY 2024-25</div>
+          </div>
+          <div class="tool-card" onclick="showPage('banking')">
+            <span class="tool-icon">🏦</span>
+            <div class="tool-name">EMI Calc</div>
+            <div class="tool-desc">Loan EMI</div>
+          </div>
+          <div class="tool-card" onclick="showPage('banking'); showBankingTab('sip')">
+            <span class="tool-icon">📈</span>
+            <div class="tool-name">SIP Calc</div>
+            <div class="tool-desc">MF returns</div>
+          </div>
+          <div class="tool-card" onclick="showPage('banking'); showBankingTab('fd')">
+            <span class="tool-icon">💳</span>
+            <div class="tool-name">FD Calc</div>
+            <div class="tool-desc">Fixed Deposit</div>
+          </div>
+          <div class="tool-card" onclick="showPage('banking'); showBankingTab('rd')">
+            <span class="tool-icon">🪙</span>
+            <div class="tool-name">RD Calc</div>
+            <div class="tool-desc">Recurring Dep.</div>
+          </div>
+          <div class="tool-card" onclick="showPage('banking'); showBankingTab('loan')">
+            <span class="tool-icon">🏠</span>
+            <div class="tool-name">Loan Eligib.</div>
+            <div class="tool-desc">How much?</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GRADE REFERENCE -->
+      <div class="card">
+        <div class="card-title">📌 Grade Reference Chart</div>
+        <div class="card-subtitle">10-point & 4-point grading systems</div>
+        <div class="tabs">
+          <button class="tab-btn active" onclick="switchGradeRef(this,'g10')">10-Point</button>
+          <button class="tab-btn" onclick="switchGradeRef(this,'g4')">4-Point (US)</button>
+        </div>
+        <div id="g10" class="tab-content active">
+          <div class="grade-ref-grid">
+            <div class="grade-ref-item"><div class="grade-letter color-emerald">O</div><div class="grade-points">10 pts · 90-100%</div></div>
+            <div class="grade-ref-item"><div class="grade-letter color-emerald">A+</div><div class="grade-points">9 pts · 80-89%</div></div>
+            <div class="grade-ref-item"><div class="grade-letter color-blue">A</div><div class="grade-points">8 pts · 70-79%</div></div>
+            <div class="grade-ref-item"><div class="grade-letter color-blue">B+</div><div class="grade-points">7 pts · 60-69%</div></div>
+            <div class="grade-ref-item"><div class="grade-letter color-amber">B</div><div class="grade-points">6 pts · 50-59%</div></div>
+            <div class="grade-ref-item"><div class="grade-letter color-amber">C</div><div class="grade-points">5 pts · 45-49%</div></div>
+            <div class="grade-ref-item"><div class="grade-letter color-rose">F</div><div class="grade-points">0 pts · &lt;45%</div></div>
+            <div class="grade-ref-item"><div class="grade-letter" style="color:var(--text3)">Ab</div><div class="grade-points">Absent</div></div>
+          </div>
+        </div>
+        <div id="g4" class="tab-content">
+          <div class="grade-ref-grid">
+            <div class="grade-ref-item"><div class="grade-letter color-emerald">A+</div><div class="grade-points">4.0 · 97-100%</div></div>
+            <div class="grade-ref-item"><div class="grade-letter color-emerald">A</div><div class="grade-points">4.0 · 93-96%</div></div>
+            <div class="grade-ref-item"><div class="grade-letter color-emerald">A−</div><div class="grade-points">3.7 · 90-92%</div></div>
+            <div class="grade-ref-item"><div class="grade-letter color-blue">B+</div><div class="grade-points">3.3 · 87-89%</div></div>
+            <div class="grade-ref-item"><div class="grade-letter color-blue">B</div><div class="grade-points">3.0 · 83-86%</div></div>
+            <div class="grade-ref-item"><div class="grade-letter color-blue">B−</div><div class="grade-points">2.7 · 80-82%</div></div>
+            <div class="grade-ref-item"><div class="grade-letter color-amber">C+</div><div class="grade-points">2.3 · 77-79%</div></div>
+            <div class="grade-ref-item"><div class="grade-letter color-amber">C</div><div class="grade-points">2.0 · 73-76%</div></div>
+            <div class="grade-ref-item"><div class="grade-letter color-amber">C−</div><div class="grade-points">1.7 · 70-72%</div></div>
+            <div class="grade-ref-item"><div class="grade-letter color-rose">D</div><div class="grade-points">1.0 · 60-69%</div></div>
+            <div class="grade-ref-item"><div class="grade-letter color-rose">F</div><div class="grade-points">0.0 · &lt;60%</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <div class="sidebar-ad">
+        <div class="sidebar-ad-icon">📢</div>
+        <div><div class="ad-label">AD</div> 300×250 Ad Space</div>
+        <div style="font-size:11px">Google AdSense Placement</div>
+      </div>
+      <div class="quick-links">
+        <h3>Quick Links</h3>
+        <div class="quick-link" onclick="showPage('sgpa')"><span class="quick-link-icon">📚</span> SGPA Calculator</div>
+        <div class="quick-link" onclick="showPage('cgpa')"><span class="quick-link-icon">🎓</span> CGPA Calculator</div>
+        <div class="quick-link" onclick="showPage('converter')"><span class="quick-link-icon">🔄</span> CGPA to Percentage</div>
+        <div class="quick-link" onclick="showPage('dashboard')"><span class="quick-link-icon">📈</span> Performance Dashboard</div>
+        <div class="quick-link" onclick="showPage('salary')"><span class="quick-link-icon">💰</span> Salary Calculator</div>
+        <div class="quick-link" onclick="showPage('banking')"><span class="quick-link-icon">🏦</span> EMI Calculator</div>
+        <div class="quick-link" onclick="showPage('banking'); showBankingTab('sip')"><span class="quick-link-icon">📊</span> SIP Calculator</div>
+        <div class="quick-link" onclick="showPage('attendance')"><span class="quick-link-icon">🗓️</span> Attendance Calculator</div>
+        <div class="divider" style="margin:12px 0"></div>
+        <div class="quick-link" onclick="showPage('about')"><span class="quick-link-icon">ℹ️</span> About Us</div>
+        <div class="quick-link" onclick="showPage('privacy')"><span class="quick-link-icon">🔒</span> Privacy Policy</div>
+        <div class="quick-link" onclick="showPage('terms')"><span class="quick-link-icon">📄</span> Terms & Conditions</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== SGPA PAGE ========== -->
+<div class="page" id="page-sgpa">
+  <div class="layout">
+    <div>
+      <div class="card">
+        <div class="card-title">📚 SGPA Calculator <span class="badge">Semester GPA</span></div>
+        <div class="card-subtitle">Calculate your Semester Grade Point Average. Add all subjects with credits and grades.</div>
+
+        <div class="info-box">ℹ️ SGPA = Σ(Credit × Grade Point) ÷ Σ(Credits). Add subjects below and hit Calculate.</div>
+
+        <div class="form-row form-row-2">
+          <div>
+            <label>Grading System</label>
+            <select id="gradingSystem" onchange="updateGradingUI()">
+              <option value="10">10-Point GPA (India)</option>
+              <option value="4">4-Point GPA (US)</option>
+              <option value="percentage">Percentage Based</option>
+            </select>
+          </div>
+          <div>
+            <label>Input Type</label>
+            <div class="grade-input-type">
+              <div class="radio-pill active" id="pill-grade" onclick="setInputType('grade')">Grade Letter</div>
+              <div class="radio-pill" id="pill-marks" onclick="setInputType('marks')">Marks / %</div>
+            </div>
+          </div>
+        </div>
+
+        <div id="subjects-container"></div>
+        <div class="btn-group">
+          <button class="btn btn-secondary" onclick="addSubject()">+ Add Subject</button>
+          <button class="btn btn-primary" onclick="calculateSGPA()">⚡ Calculate SGPA</button>
+          <button class="btn btn-danger btn-sm" onclick="clearSGPA()">Reset</button>
+        </div>
+
+        <div id="sgpa-result" style="display:none"></div>
+      </div>
+
+      <!-- In-content ad -->
+      <div class="card" style="background:var(--surface2);text-align:center;padding:16px;font-size:12px;color:var(--text3)">
+        <span class="ad-label">AD</span> 728×90 Leaderboard · Google AdSense In-Content Placement
+      </div>
+
+      <div class="card">
+        <div class="card-title">📋 Subject-wise Breakdown</div>
+        <div class="card-subtitle">Detailed view of each subject's contribution</div>
+        <div id="sgpa-breakdown">
+          <p class="text-muted text-center" style="padding:24px 0">Add subjects and calculate SGPA to see breakdown.</p>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar">
+      <div class="sidebar-ad">
+        <div class="sidebar-ad-icon">📢</div>
+        <div><div class="ad-label">AD</div> 300×250 Sidebar Ad</div>
+        <div style="font-size:11px">Google AdSense</div>
+      </div>
+      <div class="quick-links">
+        <h3>Related Tools</h3>
+        <div class="quick-link" onclick="showPage('cgpa')"><span class="quick-link-icon">🎓</span> CGPA Calculator</div>
+        <div class="quick-link" onclick="showPage('converter')"><span class="quick-link-icon">🔄</span> CGPA to %</div>
+        <div class="quick-link" onclick="showPage('dashboard')"><span class="quick-link-icon">📈</span> Dashboard</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== CGPA PAGE ========== -->
+<div class="page" id="page-cgpa">
+  <div class="layout">
+    <div>
+      <div class="card">
+        <div class="card-title">🎓 CGPA Calculator <span class="badge">Subject-wise</span></div>
+        <div class="card-subtitle">Enter every subject from all semesters. CGPA is calculated directly from subject credits and grades.</div>
+
+        <div class="info-box">ℹ️ CGPA = Σ(Credit × Grade Point) ÷ Σ(Total Credits) — across ALL semesters combined.</div>
+
+        <!-- Grading system & input type selectors (shared with SGPA) -->
+        <div class="form-row form-row-2" style="margin-bottom:16px">
+          <div>
+            <label>Grading System</label>
+            <select id="cgpa-grading-system">
+              <option value="10">10-Point GPA (India)</option>
+              <option value="4">4-Point GPA (US)</option>
+              <option value="percentage">Percentage Based</option>
+            </select>
+          </div>
+          <div>
+            <label>Input Type</label>
+            <div class="grade-input-type">
+              <div class="radio-pill active" id="cgpa-pill-grade" onclick="setCGPAInputType('grade')">Grade Letter</div>
+              <div class="radio-pill" id="cgpa-pill-marks" onclick="setCGPAInputType('marks')">Marks / %</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Semester group toggle -->
+        <div style="margin-bottom:12px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+          <label style="text-transform:none;font-size:13px;font-weight:600;color:var(--text2);margin:0">
+            Group subjects by semester?
+          </label>
+          <label style="display:flex;align-items:center;gap:6px;cursor:pointer;text-transform:none;font-size:13px;font-weight:500;margin:0">
+            <input type="checkbox" id="cgpa-group-sems" style="width:16px;height:16px"> Yes, show semester labels
+          </label>
+        </div>
+
+        <div id="cgpa-subjects-container"></div>
+
+        <div class="btn-group">
+          <button class="btn btn-secondary" onclick="addCGPASubject()">+ Add Subject</button>
+          <button class="btn btn-secondary" onclick="addCGPASemesterBlock()">+ Add Semester Block</button>
+          <button class="btn btn-primary" onclick="calculateCGPA()">⚡ Calculate CGPA</button>
+          <button class="btn btn-danger btn-sm" onclick="clearCGPA()">Reset</button>
+        </div>
+
+        <div id="cgpa-result" style="display:none"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">📊 Subject-wise Breakdown</div>
+        <div id="cgpa-table-wrap">
+          <p class="text-muted text-center" style="padding:24px 0">Add subjects and calculate CGPA to see breakdown.</p>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar">
+      <div class="sidebar-ad">
+        <div class="sidebar-ad-icon">📢</div>
+        <div><div class="ad-label">AD</div> 300×250 Sidebar Ad</div>
+      </div>
+      <div class="quick-links">
+        <h3>Quick Actions</h3>
+        <div class="quick-link" onclick="showPage('sgpa')"><span class="quick-link-icon">📚</span> SGPA Calculator</div>
+        <div class="quick-link" onclick="showPage('converter')"><span class="quick-link-icon">🔄</span> CGPA to %</div>
+        <div class="quick-link" onclick="showPage('dashboard')"><span class="quick-link-icon">📈</span> View Dashboard</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== CONVERTER PAGE ========== -->
+<div class="page" id="page-converter">
+  <div class="layout">
+    <div>
+      <div class="card">
+        <div class="card-title">🔄 GPA ↔ Percentage Converter</div>
+        <div class="card-subtitle">Convert between CGPA/SGPA and percentage using university-specific formulas</div>
+
+        <div class="tabs" id="converter-tabs">
+          <button class="tab-btn active" onclick="setConverterTab('cgpa-pct')">CGPA → Percentage</button>
+          <button class="tab-btn" onclick="setConverterTab('pct-cgpa')">Percentage → CGPA</button>
+          <button class="tab-btn" onclick="setConverterTab('sgpa-pct')">SGPA → Percentage</button>
+        </div>
+
+        <!-- CGPA to % -->
+        <div id="tab-cgpa-pct" class="tab-content active">
+          <div class="form-row form-row-2">
+            <div>
+              <label>Your CGPA</label>
+              <input type="number" id="conv-cgpa" placeholder="e.g. 8.5" min="0" max="10" step="0.01">
+            </div>
+            <div>
+              <label>Grading Scale</label>
+              <select id="conv-scale">
+                <option value="10">10-Point Scale</option>
+                <option value="4">4-Point Scale</option>
+              </select>
+            </div>
+          </div>
+          <div style="margin-bottom:16px">
+            <label>Select Formula</label>
+            <div>
+              <span class="formula-chip active" data-formula="anna" onclick="selectFormula(this)">🏫 Anna University</span>
+              <span class="formula-chip" data-formula="jntu" onclick="selectFormula(this)">🎓 JNTU</span>
+              <span class="formula-chip" data-formula="vtu" onclick="selectFormula(this)">📚 VTU</span>
+              <span class="formula-chip" data-formula="du" onclick="selectFormula(this)">🏛️ Delhi Univ.</span>
+              <span class="formula-chip" data-formula="mumbai" onclick="selectFormula(this)">🌆 Mumbai Univ.</span>
+              <span class="formula-chip" data-formula="custom" onclick="selectFormula(this)">⚙️ Custom</span>
+            </div>
+          </div>
+          <div id="custom-formula-input" style="display:none;margin-bottom:16px">
+            <label>Custom Formula (use CGPA as variable)</label>
+            <div class="form-row form-row-2">
+              <div>
+                <label>Multiplier</label>
+                <input type="number" id="custom-mult" placeholder="e.g. 9.5" value="9.5" step="0.1">
+              </div>
+              <div>
+                <label>Subtract</label>
+                <input type="number" id="custom-sub" placeholder="e.g. 0" value="0" step="0.1">
+              </div>
+            </div>
+            <div style="font-size:12px;color:var(--text3);margin-top:4px">Formula: Percentage = (CGPA × Multiplier) − Subtract</div>
+          </div>
+          <div id="conv-formula-info" class="info-box">ℹ️ Anna University: Percentage = (CGPA − 0.75) × 10</div>
+          <button class="btn btn-primary" onclick="convertGPA()">Convert Now →</button>
+          <div id="conv-result" style="display:none;margin-top:16px"></div>
+        </div>
+
+        <!-- % to CGPA -->
+        <div id="tab-pct-cgpa" class="tab-content">
+          <div class="form-row form-row-2">
+            <div>
+              <label>Your Percentage</label>
+              <input type="number" id="conv-pct" placeholder="e.g. 75.5" min="0" max="100" step="0.01">
+            </div>
+            <div>
+              <label>Target Scale</label>
+              <select id="conv-pct-scale">
+                <option value="10">10-Point Scale</option>
+                <option value="4">4-Point Scale</option>
+              </select>
+            </div>
+          </div>
+          <div style="margin-bottom:16px">
+            <label>Select Formula</label>
+            <div>
+              <span class="formula-chip active" data-formula="anna-r" onclick="selectFormula(this)">🏫 Anna University</span>
+              <span class="formula-chip" data-formula="jntu-r" onclick="selectFormula(this)">🎓 JNTU</span>
+              <span class="formula-chip" data-formula="vtu-r" onclick="selectFormula(this)">📚 VTU</span>
+              <span class="formula-chip" data-formula="custom-r" onclick="selectFormula(this)">⚙️ Custom</span>
+            </div>
+          </div>
+          <button class="btn btn-primary" onclick="convertPct()">Convert Now →</button>
+          <div id="pct-conv-result" style="display:none;margin-top:16px"></div>
+        </div>
+
+        <!-- SGPA to % -->
+        <div id="tab-sgpa-pct" class="tab-content">
+          <div class="form-row form-row-2">
+            <div>
+              <label>Your SGPA</label>
+              <input type="number" id="conv-sgpa" placeholder="e.g. 8.2" min="0" max="10" step="0.01">
+            </div>
+            <div>
+              <label>University</label>
+              <select id="sgpa-univ">
+                <option value="anna">Anna University</option>
+                <option value="jntu">JNTU</option>
+                <option value="vtu">VTU</option>
+                <option value="general">General (×10)</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn btn-primary" onclick="convertSGPA()">Convert Now →</button>
+          <div id="sgpa-conv-result" style="display:none;margin-top:16px"></div>
+        </div>
+      </div>
+
+      <!-- ALL FORMULAS TABLE -->
+      <div class="card">
+        <div class="card-title">📖 University Formula Reference</div>
+        <div class="card-subtitle">CGPA to Percentage conversion formulas used by major Indian universities</div>
+        <table class="grade-table">
+          <thead>
+            <tr>
+              <th>University</th>
+              <th>Formula</th>
+              <th>Example (CGPA 8.0)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Anna University</strong></td><td>% = (CGPA − 0.75) × 10</td><td>72.5%</td></tr>
+            <tr><td><strong>JNTU</strong></td><td>% = CGPA × 10</td><td>80%</td></tr>
+            <tr><td><strong>VTU</strong></td><td>% = (CGPA − 0.75) × 10</td><td>72.5%</td></tr>
+            <tr><td><strong>Mumbai University</strong></td><td>% = CGPA × 9.5</td><td>76%</td></tr>
+            <tr><td><strong>Delhi University</strong></td><td>% = (CGPA − 0.5) × 10</td><td>75%</td></tr>
+            <tr><td><strong>IIT/NIT (General)</strong></td><td>% = CGPA × 9.5</td><td>76%</td></tr>
+            <tr><td><strong>CBCS (UGC)</strong></td><td>% = (CGPA × 10) − 7.5</td><td>72.5%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="sidebar">
+      <div class="sidebar-ad">
+        <div class="sidebar-ad-icon">📢</div>
+        <div><div class="ad-label">AD</div> 300×250 Sidebar Ad</div>
+      </div>
+      <div class="quick-links">
+        <h3>Related</h3>
+        <div class="quick-link" onclick="showPage('cgpa')"><span class="quick-link-icon">🎓</span> CGPA Calculator</div>
+        <div class="quick-link" onclick="showPage('sgpa')"><span class="quick-link-icon">📚</span> SGPA Calculator</div>
+        <div class="quick-link" onclick="showPage('dashboard')"><span class="quick-link-icon">📈</span> Dashboard</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== DASHBOARD PAGE ========== -->
+<div class="page" id="page-dashboard">
+  <div class="layout">
+    <div>
+      <div class="card">
+        <div class="card-title">📈 Academic Performance Dashboard</div>
+        <div class="card-subtitle">Enter your semester GPA data to visualize your academic progress</div>
+        <div id="dash-sems-container"></div>
+        <div class="btn-group">
+          <button class="btn btn-secondary" onclick="addDashSem()">+ Add Semester</button>
+          <button class="btn btn-primary" onclick="renderDashboard()">📊 Generate Dashboard</button>
+          <button class="btn btn-danger btn-sm" onclick="clearDashboard()">Reset</button>
+        </div>
+      </div>
+
+      <div id="dashboard-results" style="display:none">
+        <div class="grid-2">
+          <div class="card" style="margin-bottom:0">
+            <div class="card-title">Overall CGPA</div>
+            <div class="result-value" id="dash-cgpa" style="font-size:40px">—</div>
+            <div class="result-label">Cumulative GPA</div>
+          </div>
+          <div class="card" style="margin-bottom:0">
+            <div class="card-title">Percentage Equivalent</div>
+            <div class="result-value" id="dash-pct" style="font-size:40px;color:var(--emerald)">—</div>
+            <div class="result-label">Percentage</div>
+          </div>
+        </div>
+        <div class="chart-wrap" style="margin-top:20px">
+          <div class="card-title" style="margin-bottom:16px">📊 Semester GPA Trend</div>
+          <canvas id="gpaChart" height="90"></canvas>
+        </div>
+        <div class="chart-wrap" style="margin-top:16px">
+          <div class="card-title" style="margin-bottom:16px">📋 Semester Performance</div>
+          <canvas id="barChart" height="90"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar">
+      <div class="sidebar-ad">
+        <div class="sidebar-ad-icon">📢</div>
+        <div><div class="ad-label">AD</div> 300×250 Sidebar Ad</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== SALARY PAGE ========== -->
+<div class="page" id="page-salary">
+  <div class="layout">
+    <div>
+      <div class="card">
+        <div class="card-title">💰 Salary & Career Calculators</div>
+        <div class="card-subtitle">In-hand salary, CTC breakdown, and income tax calculator</div>
+        <div class="tabs">
+          <button class="tab-btn active" id="sal-tab-inhand" onclick="showSalaryTab('inhand')">In-Hand Salary</button>
+          <button class="tab-btn" id="sal-tab-ctc" onclick="showSalaryTab('ctc')">CTC Breakup</button>
+          <button class="tab-btn" id="sal-tab-tax" onclick="showSalaryTab('tax')">Income Tax</button>
+        </div>
+
+        <!-- In-hand -->
+        <div id="sal-inhand" class="tab-content active">
+          <div class="form-row form-row-2">
+            <div><label>Monthly CTC (₹)</label><input type="number" id="monthly-ctc" placeholder="e.g. 50000" oninput="calcInhand()"></div>
+            <div><label>Annual CTC (₹)</label><input type="number" id="annual-ctc" placeholder="e.g. 600000" oninput="calcInhandAnnual()"></div>
+          </div>
+          <div class="form-row form-row-2">
+            <div><label>PF Contribution (%)</label><input type="number" id="pf-pct" value="12" min="0" max="12" oninput="calcInhand()"></div>
+            <div><label>Professional Tax (₹/month)</label><input type="number" id="prof-tax" value="200" oninput="calcInhand()"></div>
+          </div>
+          <div id="inhand-result" style="display:none">
+            <div class="divider"></div>
+            <div class="card-title" style="margin-bottom:12px">Salary Breakdown</div>
+            <div id="inhand-rows"></div>
+          </div>
+        </div>
+
+        <!-- CTC -->
+        <div id="sal-ctc" class="tab-content">
+          <div class="form-row form-row-2">
+            <div><label>Annual CTC (₹)</label><input type="number" id="ctc-annual" placeholder="e.g. 1000000" oninput="calcCTC()"></div>
+            <div><label>City Type</label>
+              <select id="city-type" onchange="calcCTC()">
+                <option value="metro">Metro (HRA 50%)</option>
+                <option value="nonmetro">Non-Metro (HRA 40%)</option>
+              </select>
+            </div>
+          </div>
+          <div id="ctc-result" style="display:none">
+            <div class="divider"></div>
+            <div id="ctc-rows"></div>
+          </div>
+        </div>
+
+        <!-- Tax -->
+        <div id="sal-tax" class="tab-content">
+          <div class="info-box">ℹ️ New Tax Regime (FY 2024-25). Standard deduction ₹75,000 applied automatically.</div>
+          <div class="form-row form-row-2">
+            <div><label>Annual Income (₹)</label><input type="number" id="tax-income" placeholder="e.g. 1200000" oninput="calcTax()"></div>
+            <div><label>Regime</label>
+              <select id="tax-regime" onchange="calcTax()">
+                <option value="new">New Regime</option>
+                <option value="old">Old Regime</option>
+              </select>
+            </div>
+          </div>
+          <div id="tax-result" style="display:none">
+            <div class="divider"></div>
+            <div id="tax-rows"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar">
+      <div class="sidebar-ad"><div class="sidebar-ad-icon">📢</div><div><div class="ad-label">AD</div> 300×250</div></div>
+      <div class="quick-links">
+        <h3>Related</h3>
+        <div class="quick-link" onclick="showPage('banking')"><span class="quick-link-icon">🏦</span> EMI Calculator</div>
+        <div class="quick-link" onclick="showPage('banking'); showBankingTab('sip')"><span class="quick-link-icon">📈</span> SIP Calculator</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== BANKING PAGE ========== -->
+<div class="page" id="page-banking">
+  <div class="layout">
+    <div>
+      <div class="card">
+        <div class="card-title">🏦 Banking & Finance Calculators</div>
+        <div class="card-subtitle">EMI, SIP, FD, RD, Loan Eligibility calculators</div>
+        <div class="tabs" style="flex-wrap:wrap">
+          <button class="tab-btn active" id="bank-tab-emi" onclick="showBankingTab('emi')">EMI</button>
+          <button class="tab-btn" id="bank-tab-sip" onclick="showBankingTab('sip')">SIP</button>
+          <button class="tab-btn" id="bank-tab-fd" onclick="showBankingTab('fd')">FD</button>
+          <button class="tab-btn" id="bank-tab-rd" onclick="showBankingTab('rd')">RD</button>
+          <button class="tab-btn" id="bank-tab-loan" onclick="showBankingTab('loan')">Loan Eligibility</button>
+          <button class="tab-btn" id="bank-tab-interest" onclick="showBankingTab('interest')">Interest Calc</button>
+        </div>
+
+        <!-- EMI -->
+        <div id="bank-emi" class="tab-content active">
+          <div class="form-row form-row-3">
+            <div><label>Loan Amount (₹)</label><input type="number" id="emi-loan" placeholder="500000" oninput="calcEMI()"></div>
+            <div><label>Annual Rate (%)</label><input type="number" id="emi-rate" placeholder="8.5" step="0.1" oninput="calcEMI()"></div>
+            <div><label>Tenure (Months)</label><input type="number" id="emi-tenure" placeholder="60" oninput="calcEMI()"></div>
+          </div>
+          <div id="emi-result" style="display:none"><div class="divider"></div><div id="emi-rows"></div></div>
+        </div>
+
+        <!-- SIP -->
+        <div id="bank-sip" class="tab-content">
+          <div class="form-row form-row-3">
+            <div><label>Monthly SIP (₹)</label><input type="number" id="sip-amount" placeholder="5000" oninput="calcSIP()"></div>
+            <div><label>Expected Return (%/yr)</label><input type="number" id="sip-rate" placeholder="12" step="0.1" oninput="calcSIP()"></div>
+            <div><label>Duration (Years)</label><input type="number" id="sip-years" placeholder="10" oninput="calcSIP()"></div>
+          </div>
+          <div id="sip-result" style="display:none"><div class="divider"></div><div id="sip-rows"></div></div>
+        </div>
+
+        <!-- FD -->
+        <div id="bank-fd" class="tab-content">
+          <div class="form-row form-row-3">
+            <div><label>Principal (₹)</label><input type="number" id="fd-principal" placeholder="100000" oninput="calcFD()"></div>
+            <div><label>Annual Rate (%)</label><input type="number" id="fd-rate" placeholder="7" step="0.1" oninput="calcFD()"></div>
+            <div><label>Duration (Years)</label><input type="number" id="fd-years" placeholder="5" oninput="calcFD()"></div>
+          </div>
+          <div class="form-row form-row-2" style="margin-top:0">
+            <div><label>Compounding</label>
+              <select id="fd-compound" onchange="calcFD()">
+                <option value="1">Annually</option>
+                <option value="2">Half-Yearly</option>
+                <option value="4">Quarterly</option>
+                <option value="12">Monthly</option>
+              </select>
+            </div>
+          </div>
+          <div id="fd-result" style="display:none"><div class="divider"></div><div id="fd-rows"></div></div>
+        </div>
+
+        <!-- RD -->
+        <div id="bank-rd" class="tab-content">
+          <div class="form-row form-row-3">
+            <div><label>Monthly Deposit (₹)</label><input type="number" id="rd-amount" placeholder="2000" oninput="calcRD()"></div>
+            <div><label>Annual Rate (%)</label><input type="number" id="rd-rate" placeholder="6.5" step="0.1" oninput="calcRD()"></div>
+            <div><label>Duration (Months)</label><input type="number" id="rd-months" placeholder="24" oninput="calcRD()"></div>
+          </div>
+          <div id="rd-result" style="display:none"><div class="divider"></div><div id="rd-rows"></div></div>
+        </div>
+
+        <!-- LOAN ELIGIBILITY -->
+        <div id="bank-loan" class="tab-content">
+          <div class="form-row form-row-2">
+            <div><label>Monthly Net Salary (₹)</label><input type="number" id="loan-salary" placeholder="50000" oninput="calcLoan()"></div>
+            <div><label>Annual Rate (%)</label><input type="number" id="loan-rate" placeholder="8.5" step="0.1" oninput="calcLoan()"></div>
+          </div>
+          <div class="form-row form-row-2">
+            <div><label>Tenure (Years)</label><input type="number" id="loan-years" placeholder="20" oninput="calcLoan()"></div>
+            <div><label>Existing EMIs (₹/month)</label><input type="number" id="loan-existing" placeholder="0" oninput="calcLoan()"></div>
+          </div>
+          <div id="loan-result" style="display:none"><div class="divider"></div><div id="loan-rows"></div></div>
+        </div>
+
+        <!-- INTEREST -->
+        <div id="bank-interest" class="tab-content">
+          <div class="form-row form-row-3">
+            <div><label>Principal (₹)</label><input type="number" id="int-principal" placeholder="100000" oninput="calcInterest()"></div>
+            <div><label>Annual Rate (%)</label><input type="number" id="int-rate" placeholder="8" step="0.1" oninput="calcInterest()"></div>
+            <div><label>Duration (Years)</label><input type="number" id="int-years" placeholder="3" oninput="calcInterest()"></div>
+          </div>
+          <div class="form-row form-row-2" style="margin-top:0">
+            <div><label>Interest Type</label>
+              <select id="int-type" onchange="calcInterest()">
+                <option value="simple">Simple Interest</option>
+                <option value="compound">Compound Interest</option>
+              </select>
+            </div>
+          </div>
+          <div id="int-result" style="display:none"><div class="divider"></div><div id="int-rows"></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar">
+      <div class="sidebar-ad"><div class="sidebar-ad-icon">📢</div><div><div class="ad-label">AD</div> 300×250</div></div>
+      <div class="quick-links">
+        <h3>Related</h3>
+        <div class="quick-link" onclick="showPage('salary')"><span class="quick-link-icon">💰</span> Salary Calculator</div>
+        <div class="quick-link" onclick="showPage('cgpa')"><span class="quick-link-icon">🎓</span> CGPA Calculator</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== ATTENDANCE PAGE ========== -->
+<div class="page" id="page-attendance">
+  <div class="layout">
+    <div>
+      <div class="card">
+        <div class="card-title">🗓️ Attendance Calculator</div>
+        <div class="card-subtitle">Calculate your current attendance percentage and see how many classes you can miss.</div>
+        <div class="form-row form-row-2">
+          <div><label>Total Classes Held</label><input type="number" id="att-total" placeholder="120" oninput="calcAttendance()"></div>
+          <div><label>Classes Attended</label><input type="number" id="att-attended" placeholder="95" oninput="calcAttendance()"></div>
+        </div>
+        <div class="form-row form-row-2">
+          <div><label>Required Attendance (%)</label><input type="number" id="att-required" placeholder="75" value="75" oninput="calcAttendance()"></div>
+          <div><label>Upcoming Classes</label><input type="number" id="att-upcoming" placeholder="20" oninput="calcAttendance()"></div>
+        </div>
+        <div id="att-result" style="display:none"></div>
+      </div>
+    </div>
+    <div class="sidebar">
+      <div class="sidebar-ad"><div class="sidebar-ad-icon">📢</div><div><div class="ad-label">AD</div> 300×250</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== EXAM PAGE ========== -->
+<div class="page" id="page-exam">
+  <div class="layout">
+    <div>
+      <div class="card">
+        <div class="card-title">✏️ Exam Percentage Calculator</div>
+        <div class="card-subtitle">Calculate percentage from marks obtained across multiple subjects.</div>
+        <div id="exam-subjects"></div>
+        <div class="btn-group">
+          <button class="btn btn-secondary" onclick="addExamSubject()">+ Add Subject</button>
+          <button class="btn btn-primary" onclick="calcExam()">Calculate Percentage</button>
+          <button class="btn btn-danger btn-sm" onclick="clearExam()">Reset</button>
+        </div>
+        <div id="exam-result" style="display:none;margin-top:16px"></div>
+      </div>
+    </div>
+    <div class="sidebar">
+      <div class="sidebar-ad"><div class="sidebar-ad-icon">📢</div><div><div class="ad-label">AD</div> 300×250</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== ABOUT PAGE ========== -->
+<div class="page" id="page-about">
+  <div class="layout">
+    <div>
+      <div class="card">
+        <div class="section-title">About AcadScore</div>
+        <div class="section-desc">AcadScore is a free, professional academic and career utility platform built for Indian students, graduates, banking aspirants, and working professionals.</div>
+        <p style="color:var(--text2);font-size:14px;line-height:1.8;margin-bottom:16px">Our mission is to provide accurate, fast, and easy-to-use calculators that help students track their academic performance, prepare for job applications, and manage their finances. All calculations happen entirely in your browser — no data is stored or sent to any server.</p>
+        <div class="grid-2" style="margin-top:24px">
+          <div class="card" style="margin-bottom:0;background:var(--surface2)">
+            <div style="font-size:32px;margin-bottom:8px">🎓</div>
+            <div class="card-title" style="font-size:15px">For Students</div>
+            <p style="font-size:13px;color:var(--text2);margin-top:6px">CGPA, SGPA, attendance, exam percentage calculators tailored for Indian universities.</p>
+          </div>
+          <div class="card" style="margin-bottom:0;background:var(--surface2)">
+            <div style="font-size:32px;margin-bottom:8px">💼</div>
+            <div class="card-title" style="font-size:15px">For Professionals</div>
+            <p style="font-size:13px;color:var(--text2);margin-top:6px">Salary, CTC, income tax, EMI, SIP, FD calculators for career and financial planning.</p>
+          </div>
+        </div>
+      </div>
+   <div class="card">
+  <div class="card-title">📞 Contact Us</div>
+
+  <div class="form-row form-row-2">
+    <div>
+      <label>Your Name</label>
+      <input type="text" id="contactName" placeholder="Enter your name">
+    </div>
+
+    <div>
+      <label>Email</label>
+      <input type="email" id="contactEmail" placeholder="your@email.com">
+    </div>
+  </div>
+
+  <div>
+    <label>Message</label>
+    <textarea
+      id="contactMessage"
+      style="width:100%;padding:10px 12px;border:1.5px solid var(--border);border-radius:var(--radius-sm);background:var(--surface2);color:var(--text);font-family:var(--font-body);font-size:14px;resize:vertical;min-height:80px;outline:none"
+      placeholder="Your message..."></textarea>
+  </div>
+
+  <div class="btn-group">
+    <button id="sendBtn" class="btn btn-primary">
+      Send Message
+    </button>
+  </div>
+
+  <div id="successMessage"
+       style="display:none;margin-top:12px;padding:10px;border-radius:8px;background:#d4edda;color:#155724;">
+    ✅ Message sent successfully!
+  </div>
+</div>
+    </div>
+    <div class="sidebar">
+      <div class="sidebar-ad"><div class="sidebar-ad-icon">📢</div><div><div class="ad-label">AD</div> 300×250</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- PRIVACY & TERMS pages -->
+<div class="page" id="page-privacy">
+  <div class="layout">
+    <div>
+      <div class="card">
+        <div class="section-title">Privacy Policy</div>
+        <div class="section-desc">Last updated: January 2025</div>
+        <div style="color:var(--text2);font-size:14px;line-height:1.9">
+          <p><strong style="color:var(--text)">Data Collection:</strong> AcadScore does not collect, store, or transmit any personal data. All calculations are performed entirely in your browser using JavaScript. No input values are sent to our servers.</p>
+          <br><p><strong style="color:var(--text)">Cookies:</strong> We use cookies only for dark mode preference and session settings. We do not use tracking cookies.</p>
+          <br><p><strong style="color:var(--text)">Google AdSense:</strong> We display ads via Google AdSense. Google may use cookies and similar technologies to serve ads based on your prior visits to our site and other sites. You may opt out of personalized advertising at <a href="https://www.google.com/settings/ads" style="color:var(--blue)">Google Ads Settings</a>.</p>
+          <br><p><strong style="color:var(--text)">Analytics:</strong> We may use Google Analytics to understand how users interact with our platform. This data is anonymized and aggregated.</p>
+          <br><p><strong style="color:var(--text)">Contact:</strong> For privacy concerns, email us at privacy@acadscoreapp.com</p>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar"><div class="sidebar-ad"><div class="sidebar-ad-icon">📢</div><div><div class="ad-label">AD</div> 300×250</div></div></div>
+  </div>
+</div>
+
+<div class="page" id="page-terms">
+  <div class="layout">
+    <div>
+      <div class="card">
+        <div class="section-title">Terms & Conditions</div>
+        <div class="section-desc">By using AcadScore, you agree to these terms.</div>
+        <div style="color:var(--text2);font-size:14px;line-height:1.9">
+          <p><strong style="color:var(--text)">Accuracy:</strong> AcadScore provides calculators for informational purposes only. While we strive for accuracy, calculations should be verified with your institution's official records.</p>
+          <br><p><strong style="color:var(--text)">No Liability:</strong> We are not liable for any errors in calculations or decisions made based on our tools. Always verify with official sources.</p>
+          <br><p><strong style="color:var(--text)">Intellectual Property:</strong> All content, design, and code on AcadScore is protected by copyright. You may not reproduce or redistribute without permission.</p>
+          <br><p><strong style="color:var(--text)">Disclaimer:</strong> The salary, tax, and financial calculators are based on general formulas and may not reflect exact amounts. Consult a financial advisor for professional advice.</p>
+          <br><p><strong style="color:var(--text)">Changes:</strong> We reserve the right to update these terms at any time. Continued use constitutes acceptance of updated terms.</p>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar"><div class="sidebar-ad"><div class="sidebar-ad-icon">📢</div><div><div class="ad-label">AD</div> 300×250</div></div></div>
+  </div>
+</div>
+
+</div><!-- end main container -->
+
+<!-- FOOTER AD -->
+<div class="footer-ad">
+  <span class="ad-label">AD</span> 728×90 Leaderboard Footer Ad · Google AdSense Placement
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="logo" style="font-size:18px;margin-bottom:0">
+        <div class="logo-icon">📊</div> AcadScore
+      </div>
+      <p>Free academic and career utility platform for Indian students and professionals. Calculate CGPA, SGPA, salary, EMI and more — all in your browser.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Calculators</h4>
+      <a href="#" onclick="showPage('sgpa')">SGPA Calculator</a>
+      <a href="#" onclick="showPage('cgpa')">CGPA Calculator</a>
+      <a href="#" onclick="showPage('converter')">CGPA to Percentage</a>
+      <a href="#" onclick="showPage('converter')">Percentage to CGPA</a>
+      <a href="#" onclick="showPage('attendance')">Attendance Calc</a>
+      <a href="#" onclick="showPage('exam')">Exam Marks Calc</a>
+    </div>
+    <div class="footer-col">
+      <h4>Finance Tools</h4>
+      <a href="#" onclick="showPage('salary')">Salary Calculator</a>
+      <a href="#" onclick="showPage('salary'); showSalaryTab('ctc')">CTC Calculator</a>
+      <a href="#" onclick="showPage('salary'); showSalaryTab('tax')">Income Tax Calc</a>
+      <a href="#" onclick="showPage('banking')">EMI Calculator</a>
+      <a href="#" onclick="showPage('banking'); showBankingTab('sip')">SIP Calculator</a>
+      <a href="#" onclick="showPage('banking'); showBankingTab('fd')">FD Calculator</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="#" onclick="showPage('about')">About Us</a>
+      <a href="#" onclick="showPage('privacy')">Privacy Policy</a>
+      <a href="#" onclick="showPage('terms')">Terms & Conditions</a>
+      <a href="#" onclick="showPage('about')">Contact Us</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 AcadScore. All rights reserved.</span>
+    <span>Built for students across India 🇮🇳</span>
+  </div>
+</footer>
+
+<!-- MOBILE NAV -->
+<nav class="mobile-nav">
+  <button class="mob-nav-item active" id="mob-home" onclick="showPage('home')"><span class="mob-nav-icon">🏠</span>Home</button>
+  <button class="mob-nav-item" id="mob-sgpa" onclick="showPage('sgpa')"><span class="mob-nav-icon">📚</span>SGPA</button>
+  <button class="mob-nav-item" id="mob-cgpa" onclick="showPage('cgpa')"><span class="mob-nav-icon">🎓</span>CGPA</button>
+  <button class="mob-nav-item" id="mob-converter" onclick="showPage('converter')"><span class="mob-nav-icon">🔄</span>Convert</button>
+  <button class="mob-nav-item" id="mob-banking" onclick="showPage('banking')"><span class="mob-nav-icon">🏦</span>Finance</button>
+</nav>
+
+<div class="toast" id="toast"></div>
+
+<!-- STRUCTURED DATA / SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "AcadScore - CGPA & SGPA Calculator",
+  "description": "Free professional CGPA, SGPA calculator with percentage converter supporting Anna University, JNTU, VTU formulas.",
+  "url": "https://acadscoreapp.com",
+  "applicationCategory": "EducationApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" }
+}
+</script>
+
+<!-- SITEMAP reference comment for SEO -->
+<!-- sitemap.xml and robots.txt should be hosted alongside this file on the server -->
+<!-- robots.txt: User-agent: * / Allow: / / Sitemap: https://acadscoreapp.com/sitemap.xml -->
+<script src="main.js"></script>
+</body>
+</html>
