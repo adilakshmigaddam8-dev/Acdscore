@@ -32,11 +32,6 @@ const connectDB  = require('./config/db');
 const logger     = require('./utils/logger');
 const { errorHandler, notFound } = require('./middleware/errorHandler');
 
-app.use(cors({
-  origin: 'https://acdscore.vercel.app',
-  methods: ['GET','POST'],
-  credentials: true
-}));
 
 // ── Route imports ────────────────────────────────────────────────────────────
 const authRoutes       = require('./routes/auth');
@@ -95,6 +90,7 @@ const allowedOrigins = [
   'http://127.0.0.1:3000',
   'http://127.0.0.1:5000',
   'https://acdscore-3.onrender.com',
+  'https://acdscore.vercel.app',
 ].filter(Boolean);
 
 app.use(cors({
