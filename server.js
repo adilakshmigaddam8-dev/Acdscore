@@ -1,41 +1,14 @@
 /**
- * server.js – AcadScore Backend  (CORRECTED)
+ * server.js – AcadScore Backend
  *
- * ROOT CAUSE OF "JavaScript not working on localhost:5000":
- *
- *  BUG-A  Helmet CSP scriptSrc was missing a proper "'self'" that allows
- *         <script src="main.js"> (an external script file served by the same
- *         origin) to actually EXECUTE. The browser loads the file (HTTP 200)
- *         but then refuses to run it with a console error:
- *           "Refused to load script ... because it violates the following
- *            Content Security Policy directive: script-src 'unsafe-inline'"
- *         FIX: "'self'" added to scriptSrc so same-origin .js files can run.
- *
- *  BUG-B  Chart.js CDN was listed as bare hostname 'cdn.jsdelivr.net'.
- *         CSP requires the full scheme. Some browsers reject schemeless hosts.
- *         FIX: changed to 'https://cdn.jsdelivr.net'.
- *
- *  BUG-C  fonts.googleapis.com was listed in scriptSrc — it is NOT a JS host.
- *         Having it there causes unexpected CSP violations in some browsers.
- *         FIX: removed from scriptSrc; kept in styleSrc where it belongs.
- *
- *  BUG-D  connectSrc was "'self'" only. When the frontend makes fetch() calls
- *         to /api/* endpoints from the browser, 'self' should cover it for
- *         same-origin, but adding explicit localhost entries ensures no edge
- *         case blocks the XHR/fetch in local dev.
- *         FIX: added 'http://localhost:5000' and '127.0.0.1:5000'.
- *
- *  BUG-E  crossOriginEmbedderPolicy was not set to false. Helmet enables it
- *         by default which prevents loading Google Fonts and CDN resources
- *         (including Chart.js from jsdelivr) because they lack the required
- *         Cross-Origin-Resource-Policy header.
- *         FIX: crossOriginEmbedderPolicy: false.
- *
- *  BUG-F  public/ folder structure not enforced. index.html and main.js must
- *         be inside backend/public/ for express.static to serve them.
- *         FIX: added startup check that warns if public/index.html is missing.
- *
- * Previously documented fixes 1-10 from the uploaded file are retained as-is.
+ * NOTE ON CSP: Content Security Policy is disabled below
+ * (contentSecurityPolicy: false) so that the same-origin main.js,
+ * Chart.js from jsdelivr, and Google Fonts all load without CSP
+ * violations in development. If you re-enable CSP later, scriptSrc
+ * needs 'self' (for main.js), connectSrc needs 'self' (for /api/*
+ * fetch calls), and styleSrc/fontSrc need fonts.googleapis.com /
+ * fonts.gstatic.com. crossOriginEmbedderPolicy should stay disabled
+ * too, since the CDN/font resources don't send a CORP header.
  */
 
 'use strict';
@@ -90,13 +63,10 @@ const authLimiter = rateLimit({
   legacyHeaders:   false,
 });
 
-// ── Security: Helmet + CSP ───────────────────────────────────────────────────
+// ── Security: Helmet ─────────────────────────────────────────────────────────
 //
-// BUG-A FIX: "'self'" in scriptSrc → allows <script src="main.js"> to execute.
-// BUG-B FIX: full https:// scheme on CDN host for Chart.js.
-// BUG-C FIX: fonts.googleapis.com removed from scriptSrc (it's a style/font host).
-// BUG-E FIX: crossOriginEmbedderPolicy disabled so CDN + Google Fonts load.
-//
+// CSP is disabled (see note above) so same-origin scripts, the Chart.js CDN,
+// and Google Fonts all load without violations.
 const isDev = process.env.NODE_ENV !== 'production';
 
 app.use(
@@ -195,36 +165,41 @@ app.post('/api/contact', async (req, res) => {
   }
 
   try {
-const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 587,
-    secure: false,
-    auth: {
+    console.log("Contact API called");
+    console.log("EMAIL_USER:", process.env.EMAIL_USER);
+    console.log("EMAIL_PASSWORD exists:", !!process.env.EMAIL_PASSWORD);
+
+    const transporter = nodemailer.createTransport({
+      host: 'smtp.gmail.com',
+      port: 587,
+      secure: false,
+      auth: {
         user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASSWORD
-    },
-    tls: {
-        rejectUnauthorized: false
-    }
-});
+        pass: process.env.EMAIL_PASSWORD,
+      },
+      tls: {
+        rejectUnauthorized: false,
+      },
+    });
+
+    console.log("Verifying SMTP...");
+    await transporter.verify();
+    console.log("SMTP verified");
+
     await transporter.sendMail({
-      from: process.env.EMAIL_USER,
-      to:   'myraofficial057@gmail.com',
-      subject: `Contact Form - ${name}`,
-      html: `
-        <h3>New Contact Message</h3>
-        <p><b>Name:</b> ${name}</p>
-        <p><b>Email:</b> ${email}</p>
-        <p><b>Message:</b> ${message}</p>
-      `,
+      from: `"AcadScore Contact Form" <${process.env.EMAIL_USER}>`,
+      to: process.env.EMAIL_USER,
+      replyTo: email,
+      subject: `New contact form message from ${name}`,
+      text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
     });
 
     res.json({ success: true, message: 'Email sent successfully.' });
   } catch (error) {
-    console.error("EMAIL ERROR:", error);
+    logger.error(`Contact form email error: ${error.message}`);
     res.status(500).json({
       success: false,
-      error: error.message,
+      message: 'Failed to send email. Please try again later.',
     });
   }
 });
