@@ -1052,10 +1052,10 @@ document.querySelectorAll('.nav-btn').forEach(btn => {
         showPage(page);
     });
 });
-function sendMessage() {
 
-    const name = document.getElementById("contactName").value.trim();
-    const email = document.getElementById("contactEmail").value.trim();
+async function sendMessage() {
+    const name    = document.getElementById("contactName").value.trim();
+    const email   = document.getElementById("contactEmail").value.trim();
     const message = document.getElementById("contactMessage").value.trim();
 
     if (!name || !email || !message) {
@@ -1063,53 +1063,29 @@ function sendMessage() {
         return;
     }
 
-    const success = document.getElementById("successMessage");
+    try {
+        const response = await fetch('https://acdscore-platform.onrender.com/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, email, message }),
+        });
 
-    success.style.display = "block";
-
-    document.getElementById("contactName").value = "";
-    document.getElementById("contactEmail").value = "";
-    document.getElementById("contactMessage").value = "";
-
-    setTimeout(() => {
-        success.style.display = "none";
-    }, 3000);
+        const result = await response.json();
+        if (result.success) {
+            alert('✅ Message sent successfully!');
+            document.getElementById("contactName").value    = "";
+            document.getElementById("contactEmail").value   = "";
+            document.getElementById("contactMessage").value = "";
+        } else {
+            alert('❌ Failed to send message: ' + (result.message || 'Unknown error'));
+        }
+    } catch (err) {
+        alert('❌ Network error. Please check your connection and try again.');
+        console.error('Contact form error:', err);
+    }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
     const btn = document.getElementById("sendBtn");
-
-    if (btn) {
-        btn.addEventListener("click", sendMessage);
-    }
+    if (btn) btn.addEventListener("click", sendMessage);
 });
-async function sendMessage() {
-
-    const name = document.getElementById("contactName").value.trim();
-    const email = document.getElementById("contactEmail").value.trim();
-    const message = document.getElementById("contactMessage").value.trim();
-
-    if (!name || !email || !message) {
-        alert("Please fill all fields");
-        return;
-    }
-
-    const response = await fetch('https://acdscore-platform.onrender.com//api/contact', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            name,
-            email,
-            message
-        })
-    });
-
-    const result = await response.json();
-    if (result.success) {
-        alert('✅ Message sent successfully!');
-    } else {
-        alert('❌ Failed to send message');
-    }
-}
