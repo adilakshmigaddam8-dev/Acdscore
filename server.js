@@ -26,7 +26,7 @@ const compression   = require('compression');
 const hpp           = require('hpp');
 const path          = require('path');
 const fs            = require('fs');
-const nodemailer    = require('nodemailer');
+const { Resend }    = require('resend');
 
 const connectDB  = require('./config/db');
 const logger     = require('./utils/logger');
@@ -157,6 +157,8 @@ app.use('/api/admin',      adminRoutes);
 app.use('/api/analytics',  analyticsRoutes);
 
 // ── Contact Route ─────────────────────────────────────────────────────────────
+const resend = new Resend(process.env.RESEND_API_KEY);
+
 app.post('/api/contact', async (req, res) => {
   const { name, email, message } = req.body;
 
@@ -166,34 +168,28 @@ app.post('/api/contact', async (req, res) => {
 
   try {
     console.log("Contact API called");
-    console.log("EMAIL_USER:", process.env.EMAIL_USER);
-    console.log("EMAIL_PASSWORD exists:", !!process.env.EMAIL_PASSWORD);
+    console.log("RESEND_API_KEY exists:", !!process.env.RESEND_API_KEY);
 
-    const transporter = nodemailer.createTransport({
-      host: 'smtp.gmail.com',
-      port: 587,
-      secure: false,
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASSWORD,
-      },
-      tls: {
-        rejectUnauthorized: false,
-      },
-    });
-
-    console.log("Verifying SMTP...");
-    await transporter.verify();
-    console.log("SMTP verified");
-
-    await transporter.sendMail({
-      from: `"AcadScore Contact Form" <${process.env.EMAIL_USER}>`,
+    const { data, error } = await resend.emails.send({
+      // 'onboarding@resend.dev' works immediately with no domain setup.
+      // Once you verify your own domain in Resend, switch this to something
+      // like 'AcadScore Contact Form <contact@yourdomain.com>'.
+      from: 'AcadScore Contact Form <onboarding@resend.dev>',
       to: process.env.EMAIL_USER,
       replyTo: email,
       subject: `New contact form message from ${name}`,
       text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
     });
 
+    if (error) {
+      logger.error(`Contact form email error: ${error.message}`);
+      return res.status(500).json({
+        success: false,
+        message: 'Failed to send email. Please try again later.',
+      });
+    }
+
+    console.log("Email sent, id:", data?.id);
     res.json({ success: true, message: 'Email sent successfully.' });
   } catch (error) {
     logger.error(`Contact form email error: ${error.message}`);
