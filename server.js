@@ -176,9 +176,14 @@ app.post('/api/contact', async (req, res) => {
       // like 'AcadScore Contact Form <contact@yourdomain.com>'.
       from: 'AcadScore Contact Form <onboarding@resend.dev>',
       to: process.env.EMAIL_USER,
-      replyTo: email,
+      replyTo: "myraofficial057@gmail.com",
       subject: `New contact form message from ${name}`,
-      text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
+      html: `
+        <h3>Contact Form Submission</h3>
+        <p><b>Name:</b> ${name}</p>
+        <p><b>Email:</b> ${email}</p>
+        <p><b>Message:</b> ${message}</p>
+      `,
     });
 
     if (error) {
@@ -190,7 +195,7 @@ app.post('/api/contact', async (req, res) => {
     }
 
     console.log("Email sent, id:", data?.id);
-    res.json({ success: true, message: 'Email sent successfully.' });
+    res.status(200).json({ success: true, message: 'Email sent successfully.' });
   } catch (error) {
     logger.error(`Contact form email error: ${error.message}`);
     res.status(500).json({
